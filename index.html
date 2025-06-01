@@ -1,149 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NextGenEcon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #f9fafb, #e5f3ff);
-      color: #111827;
+      background-color: #f9f9f9;
+      color: #111;
       line-height: 1.6;
     }
 
     header {
-      background-color: #1e3a8a;
-      padding: 2rem;
-      text-align: center;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
       color: white;
+      padding: 80px 20px;
+      text-align: center;
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
       font-size: 3rem;
+      margin: 0;
+      font-weight: 800;
     }
 
-    .hero {
-      background: linear-gradient(145deg, #93c5fd, #1e3a8a);
-      color: white;
-      padding: 5rem 2rem;
-      text-align: center;
+    header p {
+      font-size: 1.25rem;
+      margin-top: 10px;
+      font-weight: 400;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 4rem 2rem;
+    section {
+      padding: 80px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
-    .section h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1e3a8a;
-    }
-
-    .section p {
-      margin-bottom: 1.5rem;
-    }
-
-    .cta {
-      text-align: center;
-      padding: 3rem 2rem;
-      background-color: #1e3a8a;
+    .section-dark {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
       color: white;
     }
 
-    .cta h3 {
+    .section-title {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    .cta a {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      background-color: #facc15;
-      color: #1e3a8a;
-      text-decoration: none;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      transition: background 0.3s;
+    .section-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
     }
 
-    .cta a:hover {
-      background-color: #fde047;
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .benefit-card {
+      background: white;
+      color: #111;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .benefit-card h3 {
+      margin-top: 0;
+      color: #3b82f6;
     }
 
     footer {
-      background-color: #111827;
-      color: #d1d5db;
       text-align: center;
-      padding: 1rem;
+      padding: 40px 20px;
+      background-color: #0f172a;
+      color: white;
+    }
+
+    .cta-button {
+      background: white;
+      color: #3b82f6;
+      padding: 12px 24px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #e0e7ff;
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <h1>NextGenEcon</h1>
-    <p>Elite League for Future Economic Leaders</p>
+    <p>A prestigious youth league empowering the next generation of economic leaders, thinkers, and innovators.</p>
+    <button class="cta-button">Apply Now</button>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to the Future of Economics</h2>
-    <p>NextGenEcon is an exclusive youth league designed for the brightest young minds passionate about economics, leadership, and innovation. We’re building a new generation of changemakers prepared to lead the global economy forward.</p>
+  <section>
+    <h2 class="section-title">Welcome to the Future of Economic Leadership</h2>
+    <p class="section-subtitle">
+      At <strong>NextGenEcon</strong>, we believe that tomorrow's world will be shaped by bold thinkers today. We’re not just a league — we’re a movement. A collective of elite high school students passionate about economics, leadership, and innovation.
+    </p>
   </section>
 
-  <section class="section">
-    <h3>Why Join?</h3>
-    <p>At NextGenEcon, you don’t just join a community — you join a legacy. We bring together ambitious students with a shared vision for impact in economics, public policy, entrepreneurship, and innovation.</p>
-    <p>Collaborate with like-minded peers, solve real-world challenges, and get access to expert mentorship, elite competitions, and thought-leadership opportunities.</p>
+  <section class="section-dark">
+    <h2 class="section-title">Why Join NextGenEcon?</h2>
+    <div class="benefits">
+      <div class="benefit-card">
+        <h3>Elite Network</h3>
+        <p>Collaborate with top-performing students from around the world, sharing ideas and shaping bold projects together.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Mentorship</h3>
+        <p>Learn directly from professors, economists, and Harvard-level mentors guiding your growth and career path.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Leadership Pathways</h3>
+        <p>Run initiatives, host events, and build your own economic impact programs through the league.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Research & Resources</h3>
+        <p>Access curated content, economic journals, case studies, and leadership toolkits to fuel your success.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="section">
-    <h3>Our Mission</h3>
-    <p>To empower the next generation of economists and changemakers by providing world-class opportunities, mentorship, and platforms to lead with purpose and vision.</p>
-  </section>
-
-  <section class="section">
-    <h3>What You Get</h3>
-    <ul>
-      <li>⚡ Mentorship from leading economists & Ivy League mentors</li>
-      <li>🌍 Collaboration with global peers</li>
-      <li>🎓 Advanced resources & research guides</li>
-      <li>🏆 Access to exclusive competitions & workshops</li>
-      <li>📈 Leadership development & project incubation</li>
-    </ul>
-  </section>
-
-  <section class="cta">
-    <h3>Think You’re Ready?</h3>
-    <p>Applications are open to serious, high-achieving students in Grades 9–12.</p>
-    <a href="#">Apply Now</a>
+  <section>
+    <h2 class="section-title">Your Journey Starts Here</h2>
+    <p class="section-subtitle">
+      Whether you're building economic models, organizing debates, launching passion projects, or preparing for Ivy League admissions — this is your launchpad. 
+      <br/><br/>
+      Our members go on to lead. To innovate. To inspire. You could be next.
+    </p>
+    <button class="cta-button">Join the Movement</button>
   </section>
 
   <footer>
-    <p>&copy; 2025 NextGenEcon | All rights reserved</p>
+    <p>&copy; 2025 NextGenEcon. All rights reserved.</p>
   </footer>
-</body>
 
+</body>
 </html>
