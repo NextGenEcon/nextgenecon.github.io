@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextGenEcon — Future of Economics</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-
+  <title>NextGenEcon — Elite League for Economic Leaders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #ffffff;
       --text: #1a1a1a;
-      --accent: #1e3a8a; /* Deep navy */
+      --accent: #102a43;
       --gold: #c7a96b;
-      --muted: #f4f4f4;
+      --muted: #f8f9fc;
     }
 
     * {
@@ -25,171 +23,180 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      font-size: 16px;
-      padding: 0;
     }
 
     header {
-      background-color: var(--bg);
+      background: var(--muted);
       padding: 2rem 1rem;
+      text-align: center;
       border-bottom: 1px solid #e0e0e0;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem;
-    }
-
-    h1, h2 {
+    header h1 {
       font-family: 'Lora', serif;
+      font-size: 3rem;
       color: var(--accent);
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    em {
-      font-family: 'Lora', serif;
-      color: #444;
-      font-style: italic;
+    header p {
+      font-size: 1.2rem;
+      color: #4a5568;
+      margin-top: 0.5rem;
     }
 
     .hero {
-      padding: 4rem 1rem;
-      background: var(--muted);
+      background: linear-gradient(to right, #e0e7ff, #fefcbf);
       text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      color: var(--accent);
     }
 
     .hero p {
-      margin: 1rem 0;
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin-inline: auto;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.25rem;
+      color: #2d3748;
     }
 
-    button {
+    .hero button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
       background: var(--accent);
       color: white;
       border: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      margin-top: 1rem;
-      box-shadow: 0 4px 10px rgba(30, 58, 138, 0.15);
+      transition: background 0.3s;
     }
 
-    button:hover {
-      background: #10255a;
+    .hero button:hover {
+      background: #0c1e32;
     }
 
-    section {
-      padding: 3rem 1rem;
-      border-bottom: 1px solid #e6e6e6;
+    .section {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    ul {
-      margin-top: 1rem;
-      padding-left: 1.5rem;
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-family: 'Lora', serif;
     }
 
-    ul li {
-      margin-bottom: 0.6rem;
+    .section p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #2d3748;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .section ul li {
+      padding: 0.5rem 0;
       font-weight: 500;
+      border-bottom: 1px solid #eee;
     }
 
-    form {
+    .contact-form {
+      background: var(--muted);
+      padding: 3rem 1rem;
+      border-radius: 10px;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 3rem auto 0;
+    }
+
+    .contact-form form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
 
-    input, textarea {
-      padding: 0.9rem 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
       font-size: 1rem;
-      font-family: 'Inter', sans-serif;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
-    textarea {
-      min-height: 120px;
-      resize: vertical;
+    .contact-form button {
+      align-self: flex-start;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #0a1827;
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: var(--muted);
+      font-size: 0.9rem;
       color: #555;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
+      background: var(--muted);
     }
   </style>
 </head>
+
 <body>
-  <header class="container">
+  <header>
     <h1>NextGenEcon</h1>
-    <p><em>Where Leaders Are Shaped with Wisdom & Grace</em></p>
+    <p>Elite Youth League for Economics, Leadership, and Innovation</p>
   </header>
 
-  <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
-      <h2 id="hero-title">Inspiring the Next Generation of Economists</h2>
-      <p><em>Guiding ambitious students with elegance, purpose, and real-world insights.</em></p>
-      <button type="button" aria-label="Explore programs and resources">Discover More</button>
-    </section>
+  <section class="hero">
+    <h2>Where Tomorrow’s Economists Are Forged</h2>
+    <p>NextGenEcon is not just a league. It is a transformative journey for the few who dare to lead the future of economics. Designed exclusively for top-tier students, this is your gateway to mentorship, leadership, and unmatched academic prestige.</p>
+    <button>Apply to Join</button>
+  </section>
 
-    <section aria-labelledby="about-title">
-      <h2 id="about-title">Our Vision</h2>
-      <p>
-        We empower driven learners to excel in economics through rigorous study, sharp thinking, and timeless values.
-      </p>
-      <ul>
-        <li>Elite-level economics curriculum tailored for global impact</li>
-        <li>World-class mentors and university-ready coaching</li>
-        <li>Cutting-edge resources with a minimalist aesthetic</li>
-        <li>Direct pathways to Ivy League & top UK universities</li>
-      </ul>
-    </section>
+  <section class="section">
+    <h2>Why Join NextGenEcon?</h2>
+    <p>Top students don’t follow the path — they redefine it. At NextGenEcon, you’ll gain:</p>
+    <ul>
+      <li>Personal mentorship from leading economists and Ivy League scholars</li>
+      <li>Opportunities to collaborate with the world’s brightest students</li>
+      <li>Access to advanced economic research resources and competitions</li>
+      <li>Leadership roles in national and international academic projects</li>
+      <li>A platform to build a legacy that matters</li>
+    </ul>
+  </section>
 
-    <section aria-labelledby="contact-title">
-      <h2 id="contact-title">Connect with Us</h2>
-      <form aria-label="Contact form">
-        <input type="text" name="name" placeholder="Your Full Name" aria-required="true" required />
-        <input type="email" name="email" placeholder="Your Email Address" aria-required="true" required />
-        <textarea name="message" placeholder="Your Message" aria-required="true" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+  <section class="section contact-form">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    &copy; 2025 NextGenEcon — Cultivating minds for a better tomorrow.
+    &copy; 2025 NextGenEcon. Crafted for the future elite.
   </footer>
 </body>
+
 </html>
