@@ -3,162 +3,244 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NextGenEcon | The Journey of Tomorrow’s Economic Leaders</title>
+<title>NextGenEcon | Shaping the Future Leaders of Economics</title>
+<meta name="description" content="NextGenEcon is an exclusive youth league for elite students passionate about economics, leadership, and innovation. Join to collaborate with top minds, receive mentorship, and transform your future." />
 <style>
-  /* Reset & base */
-  * {
+  /* Base Reset */
+  *, *::before, *::after {
     box-sizing: border-box;
   }
   body {
     margin: 0;
-    font-family: 'Georgia', serif;
-    background: linear-gradient(135deg, #e0e7ff, #f9fafb);
-    color: #1a202c;
-    line-height: 1.65;
+    font-family: 'Merriweather', serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #1e293b;
+    line-height: 1.6;
   }
   a {
     color: #2563eb;
     text-decoration: none;
   }
-  a:hover {
+  a:hover,
+  a:focus {
     text-decoration: underline;
+    outline: none;
   }
 
   /* Container */
   .container {
-    max-width: 900px;
-    margin: 3rem auto 6rem;
+    max-width: 850px;
+    margin: 4rem auto 6rem;
     padding: 0 1.5rem;
   }
 
   /* Header */
   header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
   }
   header h1 {
-    font-size: 3rem;
+    font-size: 3.6rem;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: #1e40af;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.1;
   }
   header p {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: #475569;
     font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
-  /* Sections (Scenes) */
+  /* Sections */
   section {
-    background: white;
-    border-radius: 12px;
-    padding: 2.5rem 3rem;
-    margin-bottom: 3rem;
-    box-shadow: 0 15px 25px rgba(66, 110, 255, 0.1);
-    transition: transform 0.3s ease;
+    background: #fff;
+    border-radius: 16px;
+    padding: 3rem 3.5rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 40px rgba(66, 110, 255, 0.15);
+  section:hover,
+  section:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(30, 64, 175, 0.15);
   }
   section h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: #1e3a8a;
-    margin-bottom: 1rem;
-    border-bottom: 3px solid #2563eb;
-    padding-bottom: 0.4rem;
+    margin-bottom: 1.3rem;
+    border-bottom: 4px solid #2563eb;
+    padding-bottom: 0.5rem;
   }
   section p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #334155;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.015em;
   }
   section ul {
-    list-style-type: disc;
-    margin-left: 1.5rem;
+    margin-left: 1.8rem;
     color: #475569;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    list-style: disc inside;
   }
   section ul li {
-    margin-bottom: 0.7rem;
+    margin-bottom: 1rem;
   }
 
-  /* Call to Action */
-  .cta-container {
+  /* Call to Action Section */
+  #call-to-action {
     text-align: center;
-    margin-top: 3rem;
   }
-  .cta-button {
+  #call-to-action h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e40af;
+  }
+  #call-to-action p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+    color: #334155;
+  }
+
+  /* Form */
+  form {
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 2px solid #cbd5e1;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  button {
     background: #2563eb;
     color: white;
-    padding: 1rem 3rem;
     font-size: 1.3rem;
-    font-weight: 700;
+    padding: 1rem 0;
     border: none;
     border-radius: 50px;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.6);
     transition: background-color 0.3s ease;
-    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.5);
     text-transform: uppercase;
   }
-  .cta-button:hover {
+  button:hover,
+  button:focus {
     background: #1d4ed8;
+    outline: none;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #64748b;
+    font-size: 0.95rem;
+    border-top: 1px solid #e2e8f0;
   }
 
   /* Responsive */
   @media (max-width: 600px) {
-    section {
-      padding: 1.8rem 1.5rem;
+    .container {
+      padding: 0 1rem;
+      margin: 3rem auto 4rem;
     }
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
     }
     header p {
-      font-size: 1rem;
+      font-size: 1.1rem;
+    }
+    section {
+      padding: 2rem 1.8rem;
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      border-bottom-width: 3px;
     }
   }
 </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container" role="main" aria-label="NextGenEcon homepage content">
+
     <header>
       <h1>NextGenEcon</h1>
-      <p><em>Embark on a Journey Reserved for the Visionaries of Economics, Leadership, and Innovation</em></p>
+      <p><em>Where Visionary Minds Forge the Future of Economics, Leadership & Innovation</em></p>
     </header>
 
-    <!-- Scene 1: The Invitation -->
-    <section aria-label="Exclusive Invitation">
-      <h2>Step Into a World Where Excellence Meets Opportunity</h2>
-      <p>Imagine a place where your passion for economics is not just nurtured but ignited—a sanctuary exclusively crafted for elite students like you, driven by curiosity, leadership, and the relentless pursuit of innovation.</p>
-      <p>NextGenEcon isn’t just a league—it’s an honor, a transformational step on your path to becoming tomorrow’s thought leader. Here, the brightest minds unite to challenge, inspire, and elevate one another.</p>
+    <!-- Scene 1: Exclusive Invitation -->
+    <section tabindex="0" aria-labelledby="invitation-title">
+      <h2 id="invitation-title">An Invitation Reserved for the Exceptional</h2>
+      <p>Welcome to <strong>NextGenEcon</strong>, an exclusive consortium designed to unite the world’s most driven and intellectually curious students. Here, your passion for economics evolves beyond theory—into transformative action, meaningful leadership, and groundbreaking innovation.</p>
+      <p>Our league is not for the average—it is a sanctuary for those who dare to think differently, lead boldly, and disrupt the status quo. Membership is a hallmark of distinction, signaling your place among the academic elite and future economic architects.</p>
     </section>
 
-    <!-- Scene 2: The Mission -->
-    <section aria-label="Our Mission and Vision">
-      <h2>A Mission to Empower the Architects of Tomorrow’s Economy</h2>
-      <p>Our mission is bold: to cultivate a generation of economists who will reshape the global economic landscape with wisdom, integrity, and visionary leadership. We believe that true progress springs from community, collaboration, and unwavering commitment.</p>
-      <p>Guided by these values, NextGenEcon equips you with the knowledge, skills, and mindset to lead boldly and innovate fearlessly.</p>
+    <!-- Scene 2: Our Mission -->
+    <section tabindex="0" aria-labelledby="mission-title">
+      <h2 id="mission-title">A Mission to Empower Future Economic Trailblazers</h2>
+      <p>At NextGenEcon, we are committed to cultivating a new generation of leaders capable of navigating and redefining the global economic landscape with insight, integrity, and innovation. Our mission transcends knowledge—we empower our members with practical skills, visionary thinking, and a commitment to societal impact.</p>
+      <p>With core values rooted in excellence, collaboration, and ethical leadership, we guide you on a path that bridges academic rigor with real-world influence.</p>
     </section>
 
-    <!-- Scene 3: The Experience -->
-    <section aria-label="Elite Experience and Benefits">
-      <h2>Unlock Opportunities Reserved for the Ambitious</h2>
+    <!-- Scene 3: The NextGenEcon Experience -->
+    <section tabindex="0" aria-labelledby="experience-title">
+      <h2 id="experience-title">Unlock Elite Opportunities & Unparalleled Growth</h2>
       <ul>
-        <li><strong>Mentorship from World-Class Experts:</strong> Gain personalized guidance from economists, innovators, and academic leaders who are invested in your success.</li>
-        <li><strong>Collaboration with Peers Who Challenge You:</strong> Join a dynamic network of high-achievers, exchanging ideas and building projects that transcend boundaries.</li>
-        <li><strong>Access to Cutting-Edge Resources:</strong> Explore exclusive economic databases, workshops, and research tools that sharpen your intellectual edge.</li>
-        <li><strong>Leadership Development & Real-World Impact:</strong> Lead initiatives that make a tangible difference, preparing you for prestigious academic institutions and influential careers.</li>
+        <li><strong>Mentorship by Renowned Economists and Industry Experts:</strong> Gain personalized guidance that sharpens your analytical and leadership acumen.</li>
+        <li><strong>Collaborative Projects with High-Caliber Peers:</strong> Engage in intellectually rigorous initiatives that challenge conventions and foster innovation.</li>
+        <li><strong>Exclusive Access to Advanced Economic Research Tools & Workshops:</strong> Expand your expertise with resources unavailable elsewhere.</li>
+        <li><strong>Leadership Development & Impactful Initiatives:</strong> Lead ventures that address pressing economic issues, positioning you for top-tier academic and professional opportunities.</li>
       </ul>
     </section>
 
-    <!-- Scene 4: The Call to Action -->
-    <section aria-label="Join Now Invitation" style="text-align: center;">
-      <h2>Are You Ready to Join the Vanguard of Economic Excellence?</h2>
-      <p>This is your moment to step beyond ordinary and claim your place among the elite. Applications for NextGenEcon are open—your journey of transformation awaits.</p>
-      <button class="cta-button" onclick="window.location.href='#apply'">Apply to Join NextGenEcon</button>
+    <!-- Scene 4: Call to Action -->
+    <section id="call-to-action" tabindex="0" aria-labelledby="cta-title">
+      <h2 id="cta-title">Are You Ready to Claim Your Place Among the Next Generation of Economic Leaders?</h2>
+      <p>NextGenEcon invites applications from serious, ambitious students prepared to push boundaries and shape the future. This is more than a club—it is a movement, a commitment to excellence and impact.</p>
+      <p><strong>Submit your details below to receive the official application and start your transformative journey.</strong></p>
+
+      <form action="#" method="post" aria-label="NextGenEcon membership application form">
+        <input type="text" name="fullName" placeholder="Full Name" required autocomplete="name" aria-required="true" />
+        <input type="email" name="email" placeholder="Email Address" required autocomplete="email" aria-required="true" />
+        <textarea name="statement" placeholder="Brief Statement of Interest (optional)" aria-describedby="statement-help"></textarea>
+        <small id="statement-help" style="display:block; color:#64748b; margin-top:-1rem; margin-bottom:1.25rem; font-size:0.9rem;">Tell us why you want to join NextGenEcon</small>
+        <button type="submit" aria-label="Submit application to NextGenEcon">Apply Now</button>
+      </form>
     </section>
-  </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2025 NextGenEcon. All rights reserved. Crafted with passion and purpose.</p>
+  </footer>
 </body>
 </html>
