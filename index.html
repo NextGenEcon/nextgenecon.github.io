@@ -1,202 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextGenEcon — Elite League for Economic Leaders</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NextGenEcon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --accent: #102a43;
-      --gold: #c7a96b;
-      --muted: #f8f9fc;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #f8f9fa;
+      color: #222;
+    }
+    header {
+      background-color: #061826;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
       line-height: 1.6;
     }
 
-    header {
-      background: var(--muted);
-      padding: 2rem 1rem;
-      text-align: center;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    header h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      color: var(--accent);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #4a5568;
-      margin-top: 0.5rem;
-    }
-
-    .hero {
-      background: linear-gradient(to right, #e0e7ff, #fefcbf);
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      font-family: 'Lora', serif;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-
-    .hero p {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      font-size: 1.25rem;
-      color: #2d3748;
-    }
-
-    .hero button {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-
-    .hero button:hover {
-      background: #0c1e32;
-    }
-
-    .section {
-      padding: 4rem 1rem;
-      max-width: 1000px;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
       margin: auto;
     }
-
-    .section h2 {
+    h2 {
+      text-align: center;
       font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      font-family: 'Lora', serif;
+      margin-bottom: 2rem;
     }
-
-    .section p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      color: #2d3748;
+    .benefits, .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
-
-    .section ul {
-      list-style: none;
-      padding-left: 0;
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
     }
-
-    .section ul li {
-      padding: 0.5rem 0;
-      font-weight: 500;
-      border-bottom: 1px solid #eee;
+    .card:hover {
+      transform: translateY(-5px);
     }
-
-    .contact-form {
-      background: var(--muted);
-      padding: 3rem 1rem;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 3rem auto 0;
-    }
-
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    .contact-form button {
-      align-self: flex-start;
-      background: var(--accent);
+    .cta {
+      background: #004d7a;
       color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      margin: 4rem 0;
     }
-
-    .contact-form button:hover {
-      background: #0a1827;
+    .cta a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
     }
 
     footer {
+      background: #111;
+      color: #aaa;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #555;
-      background: var(--muted);
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <h1>NextGenEcon</h1>
-    <p>Elite Youth League for Economics, Leadership, and Innovation</p>
+    <p>Where the brightest minds in economics converge to innovate, lead, and shape the future.</p>
   </header>
 
-  <section class="hero">
-    <h2>Where Tomorrow’s Economists Are Forged</h2>
-    <p>NextGenEcon is not just a league. It is a transformative journey for the few who dare to lead the future of economics. Designed exclusively for top-tier students, this is your gateway to mentorship, leadership, and unmatched academic prestige.</p>
-    <button>Apply to Join</button>
+  <section>
+    <h2>Our Mission</h2>
+    <p style="text-align: center; max-width: 700px; margin: auto; font-size: 1.1rem;">
+      NextGenEcon is a platform for elite, visionary students dedicated to driving change through economic understanding. 
+      We foster leadership, empower innovation, and offer exclusive mentorship from global thought leaders.
+    </p>
   </section>
 
-  <section class="section">
-    <h2>Why Join NextGenEcon?</h2>
-    <p>Top students don’t follow the path — they redefine it. At NextGenEcon, you’ll gain:</p>
-    <ul>
-      <li>Personal mentorship from leading economists and Ivy League scholars</li>
-      <li>Opportunities to collaborate with the world’s brightest students</li>
-      <li>Access to advanced economic research resources and competitions</li>
-      <li>Leadership roles in national and international academic projects</li>
-      <li>A platform to build a legacy that matters</li>
-    </ul>
+  <section>
+    <h2>Why Join?</h2>
+    <div class="benefits">
+      <div class="card">
+        <h3>🎓 Mentorship</h3>
+        <p>Get guided by Ivy League economists, researchers, and global changemakers.</p>
+      </div>
+      <div class="card">
+        <h3>🤝 Global Network</h3>
+        <p>Join a community of top students across the world with a shared passion for economics and leadership.</p>
+      </div>
+      <div class="card">
+        <h3>🚀 Real-World Projects</h3>
+        <p>Collaborate on high-impact economics research, policy proposals, and innovation challenges.</p>
+      </div>
+      <div class="card">
+        <h3>🏆 Leadership Development</h3>
+        <p>Lead initiatives, run economic simulations, and take part in youth policy summits.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="section contact-form">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <section class="cta">
+    <h2>Are You One of Us?</h2>
+    <p>If you're ready to lead the future of economics, we're ready for you. This isn't just a league—it's a legacy.</p>
+    <p><a href="#">Apply Now to NextGenEcon</a></p>
+  </section>
+
+  <section>
+    <h2>Student Voices</h2>
+    <div class="testimonials">
+      <div class="card">
+        <p>“NextGenEcon gave me a platform to lead my first research project and collaborate with brilliant minds.”</p>
+        <strong>– Aryan, UAE</strong>
+      </div>
+      <div class="card">
+        <p>“This league isn't just about economics—it's about building a global identity as a young leader.”</p>
+        <strong>– Aisha, India</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" style="background: #022b3a;">
+    <h2>Be Part of the Change</h2>
+    <p>NextGenEcon is more than an opportunity—it's a movement. Take the first step toward an extraordinary future.</p>
+    <p><a href="#">Join Now</a></p>
   </section>
 
   <footer>
-    &copy; 2025 NextGenEcon. Crafted for the future elite.
+    © 2025 NextGenEcon. All Rights Reserved. | Built with passion and purpose.
   </footer>
-</body>
 
+</body>
 </html>
