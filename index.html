@@ -1,242 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NextGenEcon | Shaping the Future Leaders of Economics</title>
-<meta name="description" content="NextGenEcon is an exclusive youth league for elite students passionate about economics, leadership, and innovation. Join to collaborate with top minds, receive mentorship, and transform your future." />
-<style>
-  /* Base Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Merriweather', serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    color: #1e293b;
-    line-height: 1.6;
-  }
-  a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus {
-    text-decoration: underline;
-    outline: none;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NextGenEcon | Shaping the Future Leaders of Economics</title>
+  <meta name="description" content="NextGenEcon is an exclusive youth league for elite students passionate about economics, leadership, and innovation. Join to collaborate with top minds, receive mentorship, and transform your future." />
+  <style>
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
-  /* Container */
-  .container {
-    max-width: 850px;
-    margin: 4rem auto 6rem;
-    padding: 0 1.5rem;
-  }
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f5ff 0%, #e0ebff 100%);
+      color: #0f172a;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: #1d4ed8;
+      outline: none;
+      text-decoration: underline;
+    }
 
-  /* Header */
-  header {
-    text-align: center;
-    margin-bottom: 5rem;
-  }
-  header h1 {
-    font-size: 3.6rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #1e40af;
-    margin-bottom: 0.3rem;
-    line-height: 1.1;
-  }
-  header p {
-    font-size: 1.35rem;
-    color: #475569;
-    font-style: italic;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  /* Sections */
-  section {
-    background: #fff;
-    border-radius: 16px;
-    padding: 3rem 3.5rem;
-    margin-bottom: 4rem;
-    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  section:hover,
-  section:focus-within {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 60px rgba(30, 64, 175, 0.15);
-  }
-  section h2 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: #1e3a8a;
-    margin-bottom: 1.3rem;
-    border-bottom: 4px solid #2563eb;
-    padding-bottom: 0.5rem;
-  }
-  section p {
-    font-size: 1.15rem;
-    color: #334155;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.015em;
-  }
-  section ul {
-    margin-left: 1.8rem;
-    color: #475569;
-    font-size: 1.1rem;
-    list-style: disc inside;
-  }
-  section ul li {
-    margin-bottom: 1rem;
-  }
-
-  /* Call to Action Section */
-  #call-to-action {
-    text-align: center;
-  }
-  #call-to-action h2 {
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1e40af;
-  }
-  #call-to-action p {
-    font-size: 1.2rem;
-    max-width: 650px;
-    margin: 0 auto 2rem auto;
-    color: #334155;
-  }
-
-  /* Form */
-  form {
-    max-width: 450px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    padding: 0.85rem 1rem;
-    margin-bottom: 1.25rem;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    border: 2px solid #cbd5e1;
-    transition: border-color 0.3s ease;
-    font-family: inherit;
-  }
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  textarea:focus {
-    border-color: #2563eb;
-    outline: none;
-  }
-  textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  button {
-    background: #2563eb;
-    color: white;
-    font-size: 1.3rem;
-    padding: 1rem 0;
-    border: none;
-    border-radius: 50px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.6);
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-  }
-  button:hover,
-  button:focus {
-    background: #1d4ed8;
-    outline: none;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: #64748b;
-    font-size: 0.95rem;
-    border-top: 1px solid #e2e8f0;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
+    /* Container */
     .container {
+      max-width: 900px;
+      margin: 4rem auto 6rem;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 6rem;
       padding: 0 1rem;
-      margin: 3rem auto 4rem;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 6vw, 4.2rem);
+      color: #1e40af;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      color: #334155;
+      font-style: italic;
+      max-width: 680px;
+      margin: 0 auto;
+      font-weight: 600;
+      line-height: 1.4;
     }
+
+    /* Section base styles */
     section {
-      padding: 2rem 1.8rem;
-      margin-bottom: 3rem;
+      border-radius: 20px;
+      padding: 3.5rem 4rem;
+      margin-bottom: 5rem;
+      box-shadow: 0 16px 48px rgb(99 102 241 / 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    section h2 {
-      font-size: 2rem;
-      border-bottom-width: 3px;
+    section:focus-within,
+    section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgb(59 130 246 / 0.3);
     }
-  }
-</style>
+
+    /* Section 1 */
+    #scene1 {
+      background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+      color: #f0f9ff;
+      box-shadow: 0 24px 60px rgb(37 99 235 / 0.4);
+      padding: 4rem 4rem;
+    }
+    #scene1 h2 {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 3rem);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #dbeafe;
+      text-shadow: 0 0 6px rgb(191 219 254 / 0.9);
+    }
+    #scene1 p {
+      font-weight: 600;
+      font-size: 1.2rem;
+      max-width: 720px;
+      margin-bottom: 1.25rem;
+      color: #dbeafe;
+      line-height: 1.5;
+    }
+
+    /* Section 2 */
+    #scene2 {
+      background: #fefefe;
+      border: 2px solid #2563eb;
+      color: #1e293b;
+    }
+    #scene2 h2 {
+      font-weight: 700;
+      font-size: clamp(2.3rem, 4vw, 2.7rem);
+      margin-bottom: 1.3rem;
+      color: #2563eb;
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 0.6rem;
+    }
+    #scene2 p {
+      font-size: 1.15rem;
+      margin-bottom: 1.3rem;
+      max-width: 700px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    /* Section 3 */
+    #scene3 {
+      background: #e0f2fe;
+      color: #0c4a6e;
+      border-radius: 20px;
+      padding: 4rem 4.5rem;
+      box-shadow: 0 24px 50px rgb(14 165 233 / 0.3);
+    }
+    #scene3 h2 {
+      font-weight: 800;
+      font-size: clamp(2.6rem, 5vw, 3rem);
+      margin-bottom: 1.7rem;
+      color: #0c4a6e;
+      text-shadow: 0 0 5px rgb(14 165 233 / 0.6);
+    }
+    #scene3 ul {
+      list-style: none;
+      padding-left: 0;
+      max-width: 720px;
+    }
+    #scene3 ul li {
+      position: relative;
+      padding-left: 2.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      font-size: 1.13rem;
+      line-height: 1.4;
+      color: #075985;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    #scene3 ul li::before {
+      content: '➤';
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-weight: 900;
+      font-size: 1.3rem;
+      line-height: 1;
+      top: 0.12rem;
+      transition: color 0.3s ease;
+    }
+    #scene3 ul li:hover,
+    #scene3 ul li:focus {
+      color: #1e40af;
+      outline: none;
+    }
+    #scene3 ul li:hover::before,
+    #scene3 ul li:focus::before {
+      color: #1e40af;
+    }
+
+    /* Section 4 - CTA */
+    #call-to-action {
+      background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+      border-radius: 24px;
+      color: #f0f9ff;
+      padding: 4.5rem 4rem;
+      text-align: center;
+      box-shadow: 0 28px 65px rgb(37 99 235 / 0.45);
+    }
+    #call-to-action h2 {
+      font-family: 'Merriweather', serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 5vw, 3.2rem);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgb(191 219 254 / 0.9);
+    }
+    #call-to-action p {
+      font-size: 1.2rem;
+      max-width: 720px;
+      margin: 0 auto 2rem auto;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #dbeafe;
+      text-shadow: 0 0 6px rgb(191 219 254 / 0.8);
+    }
+    #call-to-action strong {
+      font-weight: 900;
+    }
+
+    /* Form */
+    form {
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      border-radius: 12px;
+      border: none;
+      padding: 1rem 1.25rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      box-shadow: inset 0 0 6px rgb(255 255 255 / 0.3);
+      background: rgba(255 255 255 / 0.9);
+      transition: box-shadow 0.3s ease;
+      color: #0f172a;
+      resize: vertical;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 10px #2563eb;
+      background: #fff;
+      color: #1e40af;
+    }
+    textarea {
+      min-height: 90px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+    }
+    button[type="submit"] {
+      background: #2563eb;
+      color: #f0f9ff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 1.1rem 2rem;
+      border: none;
+      border-radius: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 10px 20px rgb(37 99 235 / 0.4);
+      font-family: 'Inter', sans-serif;
+      user-select: none;
+    }
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background: #1e40af;
+      outline: none;
+      box-shadow: 0 12px 28px rgb(30 64 175 / 0.65);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 3rem 1rem;
+      color: #64748b;
+      background: #f0f5ff;
+      border-top: 1px solid #dbeafe;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .container {
+        margin: 3rem auto 4rem;
+        padding: 0 1rem;
+      }
+      section {
+        padding: 2.5rem 2.5rem;
+      }
+      #scene3 ul li {
+        font-size: 1.1rem;
+        padding-left: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main class="container" role="main" aria-label="NextGenEcon homepage content">
-
-    <header>
+  <header role="banner">
+    <div class="container">
       <h1>NextGenEcon</h1>
-      <p><em>Where Visionary Minds Forge the Future of Economics, Leadership & Innovation</em></p>
-    </header>
+      <p><em>Where tomorrow’s economic leaders are born, shaped, and unleashed.</em></p>
+    </div>
+  </header>
 
-    <!-- Scene 1: Exclusive Invitation -->
-    <section tabindex="0" aria-labelledby="invitation-title">
-      <h2 id="invitation-title">An Invitation Reserved for the Exceptional</h2>
-      <p>Welcome to <strong>NextGenEcon</strong>, an exclusive consortium designed to unite the world’s most driven and intellectually curious students. Here, your passion for economics evolves beyond theory—into transformative action, meaningful leadership, and groundbreaking innovation.</p>
-      <p>Our league is not for the average—it is a sanctuary for those who dare to think differently, lead boldly, and disrupt the status quo. Membership is a hallmark of distinction, signaling your place among the academic elite and future economic architects.</p>
+  <main class="container" role="main" aria-label="NextGenEcon Homepage Story">
+    <section id="scene1" tabindex="0" aria-labelledby="scene1-title" aria-describedby="scene1-desc">
+      <h2 id="scene1-title">An Exclusive League for the Visionary Elite</h2>
+      <p id="scene1-desc">NextGenEcon is not just a youth league — it’s a crucible where ambition, intellect, and leadership ignite. Here, you will join a distinguished cohort of young minds passionate about economics, leadership, and innovation, united by the drive to make real-world impact.</p>
+      <p>Experience a community where your ideas spark change, your voice shapes dialogue, and your leadership commands respect.</p>
     </section>
 
-    <!-- Scene 2: Our Mission -->
-    <section tabindex="0" aria-labelledby="mission-title">
-      <h2 id="mission-title">A Mission to Empower Future Economic Trailblazers</h2>
-      <p>At NextGenEcon, we are committed to cultivating a new generation of leaders capable of navigating and redefining the global economic landscape with insight, integrity, and innovation. Our mission transcends knowledge—we empower our members with practical skills, visionary thinking, and a commitment to societal impact.</p>
-      <p>With core values rooted in excellence, collaboration, and ethical leadership, we guide you on a path that bridges academic rigor with real-world influence.</p>
+    <section id="scene2" tabindex="0" aria-labelledby="scene2-title" aria-describedby="scene2-desc">
+      <h2 id="scene2-title">Our Mission: Cultivating Excellence and Impact</h2>
+      <p id="scene2-desc">At NextGenEcon, we believe in transforming raw potential into refined brilliance. Our mission is to equip you with unparalleled opportunities:</p>
+      <p>— Collaborate with fellow top-tier students across the globe.<br />
+      — Engage with world-class mentors from academia and industry.<br />
+      — Access exclusive projects and competitions designed to challenge and inspire.<br />
+      — Develop leadership skills that set you apart in any arena.</p>
+      <p>With us, your journey transcends academics to become a movement of influence and innovation.</p>
     </section>
 
-    <!-- Scene 3: The NextGenEcon Experience -->
-    <section tabindex="0" aria-labelledby="experience-title">
-      <h2 id="experience-title">Unlock Elite Opportunities & Unparalleled Growth</h2>
-      <ul>
-        <li><strong>Mentorship by Renowned Economists and Industry Experts:</strong> Gain personalized guidance that sharpens your analytical and leadership acumen.</li>
-        <li><strong>Collaborative Projects with High-Caliber Peers:</strong> Engage in intellectually rigorous initiatives that challenge conventions and foster innovation.</li>
-        <li><strong>Exclusive Access to Advanced Economic Research Tools & Workshops:</strong> Expand your expertise with resources unavailable elsewhere.</li>
-        <li><strong>Leadership Development & Impactful Initiatives:</strong> Lead ventures that address pressing economic issues, positioning you for top-tier academic and professional opportunities.</li>
+    <section id="scene3" tabindex="0" aria-labelledby="scene3-title" aria-describedby="scene3-desc">
+      <h2 id="scene3-title">Unlock Your Potential: Opportunities Await</h2>
+      <ul aria-describedby="scene3-desc">
+        <li>Elite networking events and roundtables with economic visionaries</li>
+        <li>Hands-on workshops led by top economists and policy makers</li>
+        <li>Collaborative think tanks tackling real global challenges</li>
+        <li>Exclusive access to internships and research projects</li>
+        <li>Showcase your talents in prestigious national and international competitions</li>
       </ul>
     </section>
 
-    <!-- Scene 4: Call to Action -->
-    <section id="call-to-action" tabindex="0" aria-labelledby="cta-title">
-      <h2 id="cta-title">Are You Ready to Claim Your Place Among the Next Generation of Economic Leaders?</h2>
-      <p>NextGenEcon invites applications from serious, ambitious students prepared to push boundaries and shape the future. This is more than a club—it is a movement, a commitment to excellence and impact.</p>
-      <p><strong>Submit your details below to receive the official application and start your transformative journey.</strong></p>
+    <section id="call-to-action" tabindex="0" aria-labelledby="cta-title" aria-describedby="cta-desc">
+      <h2 id="cta-title">Your Invitation to Join NextGenEcon</h2>
+      <p id="cta-desc"><strong>Joining NextGenEcon is more than membership — it’s a commitment to excellence, leadership, and a future shaped by you.</strong></p>
+      <p><strong>Apply today and embark on your transformational journey with us.</strong></p>
 
       <form action="#" method="post" aria-label="NextGenEcon membership application form">
-        <input type="text" name="fullName" placeholder="Full Name" required autocomplete="name" aria-required="true" />
-        <input type="email" name="email" placeholder="Email Address" required autocomplete="email" aria-required="true" />
-        <textarea name="statement" placeholder="Brief Statement of Interest (optional)" aria-describedby="statement-help"></textarea>
-        <small id="statement-help" style="display:block; color:#64748b; margin-top:-1rem; margin-bottom:1.25rem; font-size:0.9rem;">Tell us why you want to join NextGenEcon</small>
+        <input
+          type="text"
+          name="fullName"
+          placeholder="Full Name"
+          required
+          autocomplete="name"
+          aria-required="true"
+          aria-label="Full Name"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          required
+          autocomplete="email"
+          aria-required="true"
+          aria-label="Email Address"
+        />
+        <textarea
+          name="statement"
+          placeholder="Brief Statement of Interest (optional)"
+          aria-describedby="statement-help"
+          aria-label="Statement of Interest"
+        ></textarea>
+        <small id="statement-help" style="display:block; color:#cbd5e1; margin-top:-1rem; margin-bottom:1.25rem; font-size:0.9rem;">
+          Tell us why you want to join NextGenEcon
+        </small>
         <button type="submit" aria-label="Submit application to NextGenEcon">Apply Now</button>
       </form>
     </section>
-
   </main>
 
   <footer role="contentinfo">
