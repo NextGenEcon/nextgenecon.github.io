@@ -3,118 +3,175 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextGenEcon - Youth League</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NextGenEcon</title>
+  <!-- Google Fonts: Playfair Display (serif) and Montserrat (sans-serif) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
     }
 
     body {
-      background-color: #ffffff;
-      color: #1c1c1c;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #111111;
-      color: #FFD700;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 28px;
-      font-weight: 800;
-    }
-
-    nav a {
-      color: #FFD700;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .hero {
-      padding: 80px 40px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      color: #444;
-    }
-
-    .section {
-      padding: 60px 40px;
-      max-width: 1000px;
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: #3a2f1b; /* dark goldish-brown */
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+      padding: 2rem 1rem;
+      max-width: 900px;
       margin: auto;
     }
 
-    .section h3 {
-      font-size: 32px;
-      color: #bfa100;
-      margin-bottom: 20px;
+    header {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      border-bottom: 2px solid #d4af37; /* gold */
     }
 
-    .section p {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 10px;
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 3.8rem;
+      color: #bfa742; /* rich gold */
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      text-shadow: 0 2px 5px rgba(191, 167, 66, 0.5);
     }
 
-    .founder-box {
-      background-color: #f9f9f9;
-      padding: 30px;
-      border-left: 5px solid #bfa100;
-      margin-top: 20px;
+    header p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #5a4a1a;
+      max-width: 700px;
+      margin: 0 auto;
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+
+    section {
+      margin-top: 3.5rem;
+      padding: 0 1rem;
+    }
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #bfa742;
+      margin-bottom: 1rem;
+      border-left: 5px solid #d4af37;
+      padding-left: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 3px rgba(191, 167, 66, 0.4);
+    }
+
+    p,
+    ul {
+      font-size: 1.1rem;
+      color: #4a3e1a;
+      margin-bottom: 1.8rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 2rem;
+      font-weight: 500;
+    }
+
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #d4af37;
+      font-size: 1.6rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+
+    .highlight {
+      color: #bfa742;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 0.05em;
     }
 
     .cta {
+      background: linear-gradient(135deg, #bfa742, #d4af37);
+      padding: 2.5rem 2rem;
+      margin-top: 4rem;
+      border-radius: 12px;
       text-align: center;
-      background-color: #111111;
-      color: #FFD700;
-      padding: 60px 40px;
+      box-shadow: 0 8px 20px rgba(191, 167, 66, 0.4);
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.06em;
     }
 
-    .cta h3 {
-      font-size: 30px;
-      margin-bottom: 20px;
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     }
 
     .cta a {
-      background-color: #FFD700;
-      color: #111;
-      padding: 15px 30px;
+      background: #3a2f1b;
+      color: #bfa742;
       text-decoration: none;
       font-weight: 700;
+      padding: 0.75rem 2.25rem;
       border-radius: 6px;
-      transition: background 0.3s;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(191, 167, 66, 0.5);
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .cta a:hover {
-      background-color: #e6be00;
+      background: #fff;
+      color: #bfa742;
+      box-shadow: 0 6px 15px rgba(191, 167, 66, 0.8);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #f0f0f0;
-      color: #555;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #a18c43;
+      margin-top: 6rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive tweak */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+      h2.section-title {
+        font-size: 1.9rem;
+      }
+      .cta h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -122,51 +179,54 @@
 <body>
   <header>
     <h1>NextGenEcon</h1>
-    <nav>
-      <a href="#mission">Mission</a>
-      <a href="#projects">Projects</a>
-      <a href="#founder">Founder</a>
-      <a href="#apply">Apply</a>
-    </nav>
+    <p>The Premier Youth League for the Future Leaders of Economics, Innovation, and Global Change.</p>
   </header>
 
-  <section class="hero">
-    <h2>Empowering Future Economic Leaders 🌍</h2>
-    <p>NextGenEcon is a youth-driven movement building real-world experience through economics, finance, entrepreneurship and global challenges — all from the ground up.</p>
+  <section>
+    <h2 class="section-title">🌍 The Mission</h2>
+    <p>
+      At <span class="highlight">NextGenEcon</span>, we envision a world shaped by visionary youth who understand economics as a force for innovation and equity. Our mission is to unite elite high school students globally who are passionate about economic research, leadership, and social transformation.
+    </p>
   </section>
 
-  <section class="section" id="mission">
-    <h3>🚀 Our Mission</h3>
-    <p>To help students develop problem-solving, research, and leadership skills in economics and commerce through hands-on initiatives, collaborative challenges, and peer-led mentorship.</p>
-
-    <h3>🌐 Global Mindset</h3>
-    <p>We aim to foster a community that’s curious, impact-driven, and future-ready — whether you're applying to Ivy League colleges or solving problems in your local city.</p>
+  <section>
+    <h2 class="section-title">🚀 Why Join?</h2>
+    <p>This isn’t just a club—it’s a <span class="highlight">movement</span>. As a member of NextGenEcon, you'll gain:</p>
+    <ul>
+      <li>🌐 Mentorship from accomplished economists, academics, and industry pioneers</li>
+      <li>🤝 Collaborations with driven peers on advanced research projects</li>
+      <li>📚 Access to curated resources and real-world case studies</li>
+      <li>🏆 Invitations to exclusive seminars, simulations, and challenges</li>
+      <li>📣 A global platform to publish your economic research and insights</li>
+    </ul>
   </section>
 
-  <section class="section" id="projects">
-    <h3>🧠 What You Can Do</h3>
-    <p>✅ Join weekly economics challenges</p>
-    <p>✅ Work on real-world case studies</p>
-    <p>✅ Create & pitch ideas in finance, marketing, and policy</p>
-    <p>✅ Learn from peers and curated online content</p>
-    <p>✅ Get featured on our blog, get LORs and build your profile</p>
+  <section>
+    <h2 class="section-title">🎓 What Makes Us Elite?</h2>
+    <p>
+      We carefully select members based on their curiosity, academic discipline, leadership spirit, and passion for change. Our league empowers students who want to explore cutting-edge topics like behavioral economics, climate finance, development economics, and AI in finance.
+    </p>
   </section>
 
-  <section class="section" id="founder">
-    <h3>🎓 From the Founder</h3>
-    <div class="founder-box">
-      <p>Hi, I'm Yuvraj — a high school student building a strong academic and leadership profile for top global universities. I started NextGenEcon to create the community I wish I had: a place to explore economics, lead real initiatives, and build something meaningful from scratch. You're not late — you're early. Join us.</p>
-    </div>
+  <section>
+    <h2 class="section-title">📈 Your Growth Journey</h2>
+    <p>At <strong>NextGenEcon</strong>, you don't just participate—you <em>lead</em>. With each month, members ascend through the league’s ranks by:</p>
+    <ul>
+      <li>🧠 Leading economic debates & policy simulations</li>
+      <li>📝 Publishing economic insights and research</li>
+      <li>👨‍🏫 Teaching others through our Junior Fellowship Program</li>
+      <li>🏛 Representing the league at international competitions</li>
+    </ul>
   </section>
 
-  <section class="cta" id="apply">
-    <h3>Ready to Join NextGenEcon?</h3>
-    <p>Apply now and become a founding member of the league.</p>
-    <a href="#">Apply Here</a>
-  </section>
+  <div class="cta">
+    <h2>Become a Founding Member of NextGenEcon</h2>
+    <p>Are you ready to be the change economics needs? Apply today and begin your journey with the world's most driven young economists.</p>
+    <a href="#">Apply Now</a>
+  </div>
 
   <footer>
-    &copy; 2025 NextGenEcon. Built by youth, for youth.
+    &copy; 2025 NextGenEcon Youth League. All rights reserved.
   </footer>
 </body>
 
