@@ -15,16 +15,16 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #fff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.7;
     }
 
     header {
       padding: 4rem 2rem;
       text-align: center;
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
     }
 
     header h1 {
@@ -34,7 +34,7 @@
     }
 
     header p {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       max-width: 900px;
       margin: 0 auto;
     }
@@ -46,43 +46,35 @@
     }
 
     .highlight {
-      color: #ffda79;
+      color: #ff5f6d;
       font-weight: bold;
     }
 
     .section-title {
-      font-size: 2.2rem;
-      font-weight: 600;
+      font-size: 2.5rem;
+      font-weight: 700;
       margin-bottom: 1rem;
-      border-left: 6px solid #ffda79;
+      border-left: 6px solid #2575fc;
       padding-left: 1rem;
     }
 
     ul {
-      list-style-type: none;
-      padding-left: 1rem;
+      margin-top: 1rem;
+      padding-left: 1.5rem;
     }
 
-    li {
-      margin-bottom: 0.8rem;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: #ffda79;
+    ul li {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
     }
 
     .cta {
       background: linear-gradient(to right, #ff416c, #ff4b2b);
-      padding: 3rem 2rem;
+      color: white;
+      padding: 3rem;
       text-align: center;
-      border-radius: 15px;
-      margin: 4rem auto;
-      max-width: 800px;
+      border-radius: 12px;
+      margin-top: 4rem;
     }
 
     .cta h2 {
@@ -90,124 +82,121 @@
       margin-bottom: 1rem;
     }
 
+    .cta p {
+      margin-bottom: 1.5rem;
+    }
+
     .cta a {
-      background: #fff;
-      color: #333;
-      padding: 0.9rem 2rem;
+      background: white;
+      color: #ff4b2b;
+      padding: 0.8rem 1.6rem;
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
-      transition: background 0.3s ease;
+      font-size: 1rem;
+      transition: all 0.3s ease;
     }
 
     .cta a:hover {
-      background: #ffda79;
+      background: #ffe2dc;
+    }
+
+    .testimonials {
+      background: #f7f7f7;
+      padding: 5rem 2rem;
     }
 
     .testimonial {
-      background: rgba(255, 255, 255, 0.1);
-      border-left: 4px solid #ffda79;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      border-radius: 8px;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-left: 5px solid #6a11cb;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .testimonial p {
       font-style: italic;
+    }
+
+    .testimonial h4 {
+      margin-top: 1rem;
+      font-weight: 600;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #ccc;
-      background-color: #1f1c2c;
-    }
-
-    nav {
-      background: #111;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #ffda79;
+      padding: 3rem 2rem;
+      font-size: 0.95rem;
+      background: #f0f0f0;
+      color: #333;
     }
   </style>
 </head>
 
 <body>
-  <nav>
-    <a href="#mission">Mission</a>
-    <a href="#join">Why Join</a>
-    <a href="#elite">Elite Factor</a>
-    <a href="#journey">Growth Journey</a>
-    <a href="#testimonials">Voices</a>
-    <a href="#apply">Apply</a>
-  </nav>
-
   <header>
     <h1>NextGenEcon</h1>
     <p>The Premier Youth League for the Future Leaders of Economics, Innovation, and Global Change.</p>
   </header>
 
-  <section id="mission">
-    <h2 class="section-title">🌍 The Mission</h2>
+  <section>
+    <h2 class="section-title">🌍 Our Mission</h2>
     <p>
-      At <span class="highlight">NextGenEcon</span>, we envision a world shaped by visionary youth who understand economics as a force for innovation and equity. Our mission is to unite elite high school students globally who are passionate about economic research, leadership, and social transformation.
+      At <span class="highlight">NextGenEcon</span>, we empower the next generation of economic thinkers, researchers, and leaders. We believe that economics is not just theory—it's a powerful force to drive innovation, equity, and change.
     </p>
   </section>
 
-  <section id="join">
-    <h2 class="section-title">🚀 Why Join?</h2>
-    <p>This isn’t just a club—it’s a <span class="highlight">movement</span>. As a member of NextGenEcon, you'll gain:</p>
+  <section>
+    <h2 class="section-title">🚀 Why Join NextGenEcon?</h2>
+    <p>Membership in our elite youth league comes with unmatched benefits:</p>
     <ul>
-      <li>🌐 Mentorship from economists, Ivy League alumni, and industry leaders</li>
-      <li>🤝 Collaborations with like-minded peers on advanced research projects</li>
-      <li>📚 Access to curated resources and real-world case studies</li>
-      <li>🏆 Invitations to exclusive seminars, simulations, and challenges</li>
-      <li>📣 A global platform to publish your economic research and blogs</li>
+      <li>🌐 Mentorship from Ivy League economists and professionals</li>
+      <li>📚 Advanced research opportunities on global economic issues</li>
+      <li>🤝 Collaborations with students worldwide</li>
+      <li>📣 Publication opportunities on our blog & partner platforms</li>
+      <li>🏆 Competitions, hackathons, and simulations year-round</li>
     </ul>
   </section>
 
-  <section id="elite">
+  <section>
     <h2 class="section-title">🎓 What Makes Us Elite?</h2>
     <p>
-      We carefully select members based on their curiosity, academic discipline, leadership spirit, and passion for change. Our league empowers students who want to explore cutting-edge topics like behavioral economics, climate finance, development economics, and AI in finance.
+      NextGenEcon is not your average high school club. We are a curated network of students who think boldly. Members go through a selective application process and gain access to: 
     </p>
-  </section>
-
-  <section id="journey">
-    <h2 class="section-title">📈 Your Growth Journey</h2>
-    <p>At <strong>NextGenEcon</strong>, you don't just participate—you <em>lead</em>. With each month, members ascend through the league’s ranks by:</p>
     <ul>
-      <li>🧠 Leading economic debates & policy simulations</li>
-      <li>📝 Publishing economic insights and research</li>
-      <li>👨‍🏫 Teaching others through our Junior Fellowship Program</li>
-      <li>🏛 Representing the league at international competitions</li>
+      <li>🧠 Deep dives into behavioral, environmental, and global development economics</li>
+      <li>📊 Policy labs and think tanks run by students</li>
+      <li>📝 Regular publishing, teaching, and consulting projects</li>
     </ul>
   </section>
 
-  <section id="testimonials">
-    <h2 class="section-title">🗣️ Voices from the League</h2>
+  <section>
+    <h2 class="section-title">📈 Your Journey with Us</h2>
+    <ul>
+      <li>💬 Monthly topic discussions and leadership simulations</li>
+      <li>🧑‍🏫 Mentorship groups and junior fellow teaching</li>
+      <li>🌍 Representing us in international conferences & Olympiads</li>
+      <li>🏅 Certification of excellence & alumni recognition</li>
+    </ul>
+  </section>
+
+  <section class="testimonials">
+    <h2 class="section-title">💬 Voices from Our Founding Members</h2>
     <div class="testimonial">
-      "Joining NextGenEcon gave me the platform to publish my first economic paper and get mentorship from a Harvard alumnus. It’s been life-changing."
-      <br>— Aanya S., India
+      <p>“Joining NextGenEcon was the most transformative step of my academic journey. The global exposure and research opportunities are unmatched.”</p>
+      <h4>— Aisha R., UAE</h4>
     </div>
     <div class="testimonial">
-      "From policy simulations to real-world case studies, the league has elevated my understanding of how economics works beyond textbooks."
-      <br>— Marcus T., Kenya
+      <p>“From mentorship to real policy debates, this league pushed me to lead, write, and think differently.”</p>
+      <h4>— Kabir D., India</h4>
     </div>
   </section>
 
-  <div class="cta" id="apply">
-    <h2>Become a Founding Member of NextGenEcon</h2>
-    <p>Are you ready to be the change economics needs? Apply today and begin your journey with the world's most driven young economists.</p>
-    <a href="#">Apply Now</a>
+  <div class="cta">
+    <h2>Apply to NextGenEcon Now</h2>
+    <p>Become a part of the world's most elite youth economics league. We're building something big—come lead it with us.</p>
+    <a href="#">Join the Movement</a>
   </div>
 
   <footer>
