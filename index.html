@@ -18,28 +18,29 @@
       background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #fff;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
       background: linear-gradient(to right, #4e54c8, #8f94fb);
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 800;
       margin-bottom: 1rem;
     }
 
     header p {
-      font-size: 1.2rem;
-      max-width: 800px;
+      font-size: 1.3rem;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     section {
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -50,33 +51,52 @@
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 600;
       margin-bottom: 1rem;
       border-left: 6px solid #ffda79;
       padding-left: 1rem;
     }
 
+    ul {
+      list-style-type: none;
+      padding-left: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #ffda79;
+    }
+
     .cta {
       background: linear-gradient(to right, #ff416c, #ff4b2b);
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
-      border-radius: 10px;
-      margin-top: 3rem;
+      border-radius: 15px;
+      margin: 4rem auto;
+      max-width: 800px;
     }
 
     .cta h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     .cta a {
       background: #fff;
       color: #333;
-      padding: 0.75rem 1.5rem;
+      padding: 0.9rem 2rem;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 8px;
       transition: background 0.3s ease;
     }
 
@@ -84,33 +104,67 @@
       background: #ffda79;
     }
 
+    .testimonial {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid #ffda79;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
       color: #ccc;
+      background-color: #1f1c2c;
+    }
+
+    nav {
+      background: #111;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #ffda79;
     }
   </style>
 </head>
 
 <body>
+  <nav>
+    <a href="#mission">Mission</a>
+    <a href="#join">Why Join</a>
+    <a href="#elite">Elite Factor</a>
+    <a href="#journey">Growth Journey</a>
+    <a href="#testimonials">Voices</a>
+    <a href="#apply">Apply</a>
+  </nav>
+
   <header>
     <h1>NextGenEcon</h1>
     <p>The Premier Youth League for the Future Leaders of Economics, Innovation, and Global Change.</p>
   </header>
 
-  <section>
+  <section id="mission">
     <h2 class="section-title">🌍 The Mission</h2>
     <p>
       At <span class="highlight">NextGenEcon</span>, we envision a world shaped by visionary youth who understand economics as a force for innovation and equity. Our mission is to unite elite high school students globally who are passionate about economic research, leadership, and social transformation.
     </p>
   </section>
 
-  <section>
+  <section id="join">
     <h2 class="section-title">🚀 Why Join?</h2>
-    <p>
-      This isn’t just a club—it’s a <span class="highlight">movement</span>. As a member of NextGenEcon, you'll gain:
-    </p>
+    <p>This isn’t just a club—it’s a <span class="highlight">movement</span>. As a member of NextGenEcon, you'll gain:</p>
     <ul>
       <li>🌐 Mentorship from economists, Ivy League alumni, and industry leaders</li>
       <li>🤝 Collaborations with like-minded peers on advanced research projects</li>
@@ -120,18 +174,16 @@
     </ul>
   </section>
 
-  <section>
+  <section id="elite">
     <h2 class="section-title">🎓 What Makes Us Elite?</h2>
     <p>
       We carefully select members based on their curiosity, academic discipline, leadership spirit, and passion for change. Our league empowers students who want to explore cutting-edge topics like behavioral economics, climate finance, development economics, and AI in finance.
     </p>
   </section>
 
-  <section>
+  <section id="journey">
     <h2 class="section-title">📈 Your Growth Journey</h2>
-    <p>
-      At <strong>NextGenEcon</strong>, you don't just participate—you <em>lead</em>. With each month, members ascend through the league’s ranks by:
-    </p>
+    <p>At <strong>NextGenEcon</strong>, you don't just participate—you <em>lead</em>. With each month, members ascend through the league’s ranks by:</p>
     <ul>
       <li>🧠 Leading economic debates & policy simulations</li>
       <li>📝 Publishing economic insights and research</li>
@@ -140,7 +192,19 @@
     </ul>
   </section>
 
-  <div class="cta">
+  <section id="testimonials">
+    <h2 class="section-title">🗣️ Voices from the League</h2>
+    <div class="testimonial">
+      "Joining NextGenEcon gave me the platform to publish my first economic paper and get mentorship from a Harvard alumnus. It’s been life-changing."
+      <br>— Aanya S., India
+    </div>
+    <div class="testimonial">
+      "From policy simulations to real-world case studies, the league has elevated my understanding of how economics works beyond textbooks."
+      <br>— Marcus T., Kenya
+    </div>
+  </section>
+
+  <div class="cta" id="apply">
     <h2>Become a Founding Member of NextGenEcon</h2>
     <p>Are you ready to be the change economics needs? Apply today and begin your journey with the world's most driven young economists.</p>
     <a href="#">Apply Now</a>
