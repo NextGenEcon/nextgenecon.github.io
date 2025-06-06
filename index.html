@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextGenEcon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>NextGenEcon – The Elite Youth League</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -16,93 +16,126 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: #ffffff;
-      color: #2c2c2c;
-      line-height: 1.6;
+      color: #333;
+      line-height: 1.7;
     }
 
     header {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
-      background: linear-gradient(to right, #b08d57, #e0c097);
-      color: #fff;
+      background: linear-gradient(90deg, #e1c16e, #f7f3e3);
     }
 
     header h1 {
-      font-size: 3rem;
-      font-weight: 800;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #2c2c2c;
       margin-bottom: 1rem;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      color: #5c5c5c;
       max-width: 800px;
       margin: 0 auto;
     }
 
     section {
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    .highlight {
-      color: #b08d57;
-      font-weight: bold;
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #b28c38;
+      margin-bottom: 2rem;
+      position: relative;
     }
 
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
+    .section-title::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 4px;
+      background: #d4af37;
+    }
+
+    p, li {
+      font-size: 1.1rem;
       margin-bottom: 1rem;
-      border-left: 6px solid #b08d57;
-      padding-left: 1rem;
-      color: #1f1f1f;
     }
 
     ul {
-      list-style-type: none;
-      padding-left: 1rem;
+      padding-left: 1.5rem;
     }
 
-    ul li::before {
-      content: "• ";
-      color: #b08d57;
-      font-weight: bold;
+    ul li::marker {
+      color: #d4af37;
+    }
+
+    .highlight {
+      color: #b28c38;
+      font-weight: 600;
+    }
+
+    .timeline {
+      margin-top: 3rem;
+      border-left: 3px solid #d4af37;
+      padding-left: 1.5rem;
+    }
+
+    .timeline div {
+      margin-bottom: 2rem;
     }
 
     .cta {
-      background: linear-gradient(to right, #b08d57, #e0c097);
-      padding: 2rem;
+      background: linear-gradient(to right, #f6e27a, #e4c66b);
+      padding: 3rem;
       text-align: center;
-      border-radius: 10px;
-      margin-top: 3rem;
-      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      margin: 5rem auto;
+      max-width: 900px;
     }
 
     .cta h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+      color: #2c2c2c;
+    }
+
+    .cta p {
+      color: #444;
+      margin-bottom: 1.5rem;
     }
 
     .cta a {
-      background: #fff;
-      color: #333;
+      background: #2c2c2c;
+      color: #fff;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 6px;
       transition: background 0.3s ease;
     }
 
     .cta a:hover {
-      background: #ffda79;
+      background: #b28c38;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
+      background-color: #f8f8f8;
       font-size: 0.9rem;
-      color: #777;
+      color: #888;
     }
   </style>
 </head>
@@ -110,58 +143,60 @@
 <body>
   <header>
     <h1>NextGenEcon</h1>
-    <p>The Premier Youth League for the Future Leaders of Economics, Innovation, and Global Change.</p>
+    <p>The Premier Global Youth League for Economics, Innovation & Leadership.</p>
   </header>
 
   <section>
-    <h2 class="section-title">🌍 The Mission</h2>
+    <h2 class="section-title">🌟 Our Vision</h2>
     <p>
-      At <span class="highlight">NextGenEcon</span>, we envision a world shaped by visionary youth who understand economics as a force for innovation and equity. Our mission is to unite elite high school students globally who are passionate about economic research, leadership, and social transformation.
+      <span class="highlight">NextGenEcon</span> aims to unite young economic visionaries from across the globe. We believe that youth can lead the next wave of economic transformation through leadership, innovation, and impact.
     </p>
   </section>
 
   <section>
-    <h2 class="section-title">🚀 Why Join?</h2>
-    <p>
-      This isn’t just a club—it’s a <span class="highlight">movement</span>. As a member of NextGenEcon, you'll gain:
-    </p>
+    <h2 class="section-title">🎯 Why Join?</h2>
     <ul>
-      <li>Mentorship from economists, Ivy League alumni, and industry leaders</li>
-      <li>Collaborations with like-minded peers on advanced research projects</li>
-      <li>Access to curated resources and real-world case studies</li>
-      <li>Invitations to exclusive seminars, simulations, and challenges</li>
-      <li>A global platform to publish your economic research and blogs</li>
+      <li>🌐 Global mentoring by Ivy League alumni, researchers & economists</li>
+      <li>📊 Publish research papers, blogs, and economic opinions</li>
+      <li>🏆 Participate in international Olympiads, challenges, and summits</li>
+      <li>🤝 Collaborate on real-world economic solutions with peers</li>
+      <li>🎓 Get recognized and stand out in global university admissions</li>
     </ul>
   </section>
 
   <section>
-    <h2 class="section-title">🎓 What Makes Us Elite?</h2>
-    <p>
-      We carefully select members based on their curiosity, academic discipline, leadership spirit, and passion for change. Our league empowers students who want to explore cutting-edge topics like behavioral economics, climate finance, development economics, and AI in finance.
-    </p>
+    <h2 class="section-title">📌 Core Pillars</h2>
+    <ul>
+      <li><strong>Leadership</strong>: Run simulations, debates, and policy pitches</li>
+      <li><strong>Research</strong>: Dive into behavioural, development, climate, and tech economics</li>
+      <li><strong>Publication</strong>: Share your ideas through our elite journal</li>
+      <li><strong>Fellowships</strong>: Train juniors and expand your influence</li>
+    </ul>
   </section>
 
   <section>
-    <h2 class="section-title">📈 Your Growth Journey</h2>
-    <p>
-      At <strong>NextGenEcon</strong>, you don't just participate—you <em>lead</em>. With each month, members ascend through the league’s ranks by:
-    </p>
-    <ul>
-      <li>Leading economic debates & policy simulations</li>
-      <li>Publishing economic insights and research</li>
-      <li>Teaching others through our Junior Fellowship Program</li>
-      <li>Representing the league at international competitions</li>
-    </ul>
+    <h2 class="section-title">📈 Your Growth Timeline</h2>
+    <div class="timeline">
+      <div><strong>Month 1:</strong> Join orientation, meet your mentors, choose your track</div>
+      <div><strong>Month 2-3:</strong> Collaborate on a national policy case study or research blog</div>
+      <div><strong>Month 4:</strong> Participate in NextGenEcon Debates & publish work</div>
+      <div><strong>Month 5+:</strong> Apply for ambassador roles, lead teams, win awards</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">📰 Youth ThinkTank</h2>
+    <p>From climate economics to AI in finance, our members write, speak, and lead in cutting-edge domains. Want to be a featured youth economist? Join and build your portfolio from day one.</p>
   </section>
 
   <div class="cta">
-    <h2>Become a Founding Member of NextGenEcon</h2>
-    <p>Are you ready to be the change economics needs? Apply today and begin your journey with the world's most driven young economists.</p>
+    <h2>Become a Founding Member</h2>
+    <p>Apply now to lead the most ambitious economic youth movement in the world. Seats are limited.</p>
     <a href="#">Apply Now</a>
   </div>
 
   <footer>
-    &copy; 2025 NextGenEcon Youth League. All rights reserved.
+    &copy; 2025 NextGenEcon Youth League. Designed with purpose for future leaders.
   </footer>
 </body>
 
