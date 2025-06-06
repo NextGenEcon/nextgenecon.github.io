@@ -1,138 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextGenEcon | A Global Youth Movement</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+  <title>NextGenEcon - Youth League</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Inter', sans-serif;
+    }
+
+    body {
       background-color: #ffffff;
-      color: #333;
+      color: #1c1c1c;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #ffffff;
-      padding: 40px;
-      text-align: center;
-      border-bottom: 2px solid #e6e6e6;
+      background: #111111;
+      color: #FFD700;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #bfa76f;
-      margin-bottom: 10px;
+      font-size: 28px;
+      font-weight: 800;
     }
 
-    header p {
-      font-size: 1.2rem;
-      color: #666;
+    nav a {
+      color: #FFD700;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
+    .hero {
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    .section {
+      padding: 60px 40px;
+      max-width: 1000px;
       margin: auto;
     }
 
-    section h2 {
-      color: #c9b037;
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+    .section h3 {
+      font-size: 32px;
+      color: #bfa100;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 18px;
+      color: #333;
       margin-bottom: 10px;
     }
 
-    .highlight {
-      color: #d4af37;
-      font-weight: bold;
+    .founder-box {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-left: 5px solid #bfa100;
+      margin-top: 20px;
     }
 
-    .feature-box {
-      background: #fafafa;
-      border-left: 5px solid #d4af37;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    .cta {
+      text-align: center;
+      background-color: #111111;
+      color: #FFD700;
+      padding: 60px 40px;
+    }
+
+    .cta h3 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .cta a {
+      background-color: #FFD700;
+      color: #111;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #e6be00;
     }
 
     footer {
-      background: #f2f2f2;
-      padding: 40px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    a {
-      color: #bfa76f;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      padding: 20px;
+      background: #f0f0f0;
+      color: #555;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>NextGenEcon</h1>
-    <p>The student-led economics movement for the future of leadership 🌍</p>
+    <nav>
+      <a href="#mission">Mission</a>
+      <a href="#projects">Projects</a>
+      <a href="#founder">Founder</a>
+      <a href="#apply">Apply</a>
+    </nav>
   </header>
 
-  <section>
-    <h2>👋 About the Founder</h2>
-    <div class="feature-box">
-      <p>Hi, I’m <span class="highlight">Yuvraj Singh</span> — a student passionate about economics, innovation, and global impact. I created NextGenEcon to unite like-minded students from across the world to explore, build, and lead in the field of economics.</p>
-    </div>
+  <section class="hero">
+    <h2>Empowering Future Economic Leaders 🌍</h2>
+    <p>NextGenEcon is a youth-driven movement building real-world experience through economics, finance, entrepreneurship and global challenges — all from the ground up.</p>
+  </section>
 
-    <h2>🌟 Mission & Vision</h2>
-    <div class="feature-box">
-      <p><strong>Mission:</strong> To build a global platform that enables students to explore economics through competitions, community, and real-world projects.</p>
-      <p><strong>Vision:</strong> To empower the next generation of economic leaders by providing resources, mentorship (in progress), and global collaboration.</p>
-    </div>
+  <section class="section" id="mission">
+    <h3>🚀 Our Mission</h3>
+    <p>To help students develop problem-solving, research, and leadership skills in economics and commerce through hands-on initiatives, collaborative challenges, and peer-led mentorship.</p>
 
-    <h2>🚀 What We Offer</h2>
-    <div class="feature-box">
-      <ul>
-        <li>🌐 Global student community</li>
-        <li>📚 Weekly economics challenges</li>
-        <li>🎓 Aspiring mentorship and speaker sessions</li>
-        <li>🛠️ Economics-based projects and case studies</li>
-        <li>💼 Resume-boosting opportunities & collaboration</li>
-      </ul>
-    </div>
+    <h3>🌐 Global Mindset</h3>
+    <p>We aim to foster a community that’s curious, impact-driven, and future-ready — whether you're applying to Ivy League colleges or solving problems in your local city.</p>
+  </section>
 
-    <h2>📈 Sample Themes</h2>
-    <div class="feature-box">
-      <p>Explore topics like:</p>
-      <ul>
-        <li>Behavioral Economics</li>
-        <li>Economic Inequality</li>
-        <li>Development & Sustainability</li>
-        <li>Financial Literacy for Gen Z</li>
-        <li>Geopolitics and Global Markets</li>
-      </ul>
-    </div>
+  <section class="section" id="projects">
+    <h3>🧠 What You Can Do</h3>
+    <p>✅ Join weekly economics challenges</p>
+    <p>✅ Work on real-world case studies</p>
+    <p>✅ Create & pitch ideas in finance, marketing, and policy</p>
+    <p>✅ Learn from peers and curated online content</p>
+    <p>✅ Get featured on our blog, get LORs and build your profile</p>
+  </section>
 
-    <h2>🌍 How to Join</h2>
-    <div class="feature-box">
-      <p>Applications are open for our founding cohort. No experience needed — just passion and consistency.</p>
-      <p>👉 <a href="#">Apply Here (Google Form)</a></p>
-    </div>
-
-    <h2>💬 FAQs</h2>
-    <div class="feature-box">
-      <p><strong>Is this only for students studying economics?</strong><br />No! Anyone interested in economics, business, or finance is welcome.</p>
-      <p><strong>Are there mentors?</strong><br />We’re currently building a network of future mentors, and open to collaborations.</p>
-      <p><strong>Do I need prior experience?</strong><br />Nope — just show up, stay consistent, and contribute. That’s what counts!</p>
+  <section class="section" id="founder">
+    <h3>🎓 From the Founder</h3>
+    <div class="founder-box">
+      <p>Hi, I'm Yuvraj — a high school student building a strong academic and leadership profile for top global universities. I started NextGenEcon to create the community I wish I had: a place to explore economics, lead real initiatives, and build something meaningful from scratch. You're not late — you're early. Join us.</p>
     </div>
   </section>
 
+  <section class="cta" id="apply">
+    <h3>Ready to Join NextGenEcon?</h3>
+    <p>Apply now and become a founding member of the league.</p>
+    <a href="#">Apply Here</a>
+  </section>
+
   <footer>
-    Built by Yuvraj Singh | NextGenEcon Youth League | 2025 🌐
+    &copy; 2025 NextGenEcon. Built by youth, for youth.
   </footer>
 </body>
+
 </html>
