@@ -1,233 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NextGenEcon</title>
-  <!-- Google Fonts: Playfair Display (serif) and Montserrat (sans-serif) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Next Gen Economics League (NGEL)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #fff;
-      color: #3a2f1b; /* dark goldish-brown */
-      line-height: 1.7;
-      letter-spacing: 0.03em;
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 1rem 4rem;
-      border-bottom: 2px solid #d4af37; /* gold */
-    }
-
-    header h1 {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 3.8rem;
-      color: #bfa742; /* rich gold */
-      letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      text-shadow: 0 2px 5px rgba(191, 167, 66, 0.5);
     }
-
-    header p {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #5a4a1a;
-      max-width: 700px;
-      margin: 0 auto;
-      font-style: italic;
-      letter-spacing: 0.03em;
+    .text-gold {
+      color: #D4AF37;
     }
-
-    section {
-      margin-top: 3.5rem;
-      padding: 0 1rem;
+    .bg-gold {
+      background-color: #D4AF37;
     }
-
-    h2.section-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 2.4rem;
-      color: #bfa742;
-      margin-bottom: 1rem;
-      border-left: 5px solid #d4af37;
-      padding-left: 1rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      text-shadow: 0 1px 3px rgba(191, 167, 66, 0.4);
-    }
-
-    p,
-    ul {
-      font-size: 1.1rem;
-      color: #4a3e1a;
-      margin-bottom: 1.8rem;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin-bottom: 1rem;
-      position: relative;
-      padding-left: 2rem;
-      font-weight: 500;
-    }
-
-    ul li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #d4af37;
-      font-size: 1.6rem;
-      line-height: 1;
-      font-weight: bold;
-    }
-
-    .highlight {
-      color: #bfa742;
-      font-weight: 700;
-      font-style: normal;
-      letter-spacing: 0.05em;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, #bfa742, #d4af37);
-      padding: 2.5rem 2rem;
-      margin-top: 4rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(191, 167, 66, 0.4);
-      color: #fff;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-    }
-
-    .cta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    }
-
-    .cta p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    }
-
-    .cta a {
-      background: #3a2f1b;
-      color: #bfa742;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 0.75rem 2.25rem;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 10px rgba(191, 167, 66, 0.5);
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .cta a:hover {
-      background: #fff;
-      color: #bfa742;
-      box-shadow: 0 6px 15px rgba(191, 167, 66, 0.8);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #a18c43;
-      margin-top: 6rem;
-      letter-spacing: 0.05em;
-    }
-
-    /* Responsive tweak */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.8rem;
-      }
-      h2.section-title {
-        font-size: 1.9rem;
-      }
-      .cta h2 {
-        font-size: 1.5rem;
-      }
+    .border-gold {
+      border-color: #D4AF37;
     }
   </style>
 </head>
+<body class="bg-white text-black">
 
-<body>
-  <header>
-    <h1>NextGenEcon</h1>
-    <p>The Premier Youth League for the Future Leaders of Economics, Innovation, and Global Change.</p>
-  </header>
-
-  <section>
-    <h2 class="section-title">🌍 The Mission</h2>
-    <p>
-      At <span class="highlight">NextGenEcon</span>, we envision a world shaped by visionary youth who understand economics as a force for innovation and equity. Our mission is to unite elite high school students globally who are passionate about economic research, leadership, and social transformation.
-    </p>
+  <!-- Hero Section -->
+  <section class="bg-black text-white py-20">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h1 class="text-5xl font-bold text-gold mb-4">Next Gen Economics League</h1>
+      <p class="text-lg">Empowering youth leaders to shape the future of economics, finance, and global change.</p>
+      <a href="#form" class="mt-8 inline-block bg-gold text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-500 transition">Join Now</a>
+    </div>
   </section>
 
-  <section>
-    <h2 class="section-title">🚀 Why Join?</h2>
-    <p>This isn’t just a club—it’s a <span class="highlight">movement</span>. As a member of NextGenEcon, you'll gain:</p>
-    <ul>
-      <li>🌐 Mentorship from accomplished economists, academics, and industry pioneers</li>
-      <li>🤝 Collaborations with driven peers on advanced research projects</li>
-      <li>📚 Access to curated resources and real-world case studies</li>
-      <li>🏆 Invitations to exclusive seminars, simulations, and challenges</li>
-      <li>📣 A global platform to publish your economic research and insights</li>
-    </ul>
+  <!-- About Section -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-4xl text-gold font-bold mb-4">About NGEL</h2>
+      <p class="text-lg text-gray-700">
+        The Next Gen Economics League (NGEL) is a dynamic youth-led platform for aspiring economists, thinkers, and problem solvers.
+        Learn real-world economics, lead social-impact projects, and prepare for Ivy League-level excellence — all while being guided by like-minded peers and ambitious leaders.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2 class="section-title">🎓 What Makes Us Elite?</h2>
-    <p>
-      We carefully select members based on their curiosity, academic discipline, leadership spirit, and passion for change. Our league empowers students who want to explore cutting-edge topics like behavioral economics, climate finance, development economics, and AI in finance.
-    </p>
+  <!-- Features -->
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
+        <h3 class="text-2xl font-semibold text-gold mb-2">Leadership</h3>
+        <p>Lead real economics projects, host events, and represent your region nationally.</p>
+      </div>
+      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
+        <h3 class="text-2xl font-semibold text-gold mb-2">Learning</h3>
+        <p>Attend curated workshops, masterclasses, and competitions to boost your profile.</p>
+      </div>
+      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
+        <h3 class="text-2xl font-semibold text-gold mb-2">Network</h3>
+        <p>Meet other brilliant students from across the world and build your tribe.</p>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2 class="section-title">📈 Your Growth Journey</h2>
-    <p>At <strong>NextGenEcon</strong>, you don't just participate—you <em>lead</em>. With each month, members ascend through the league’s ranks by:</p>
-    <ul>
-      <li>🧠 Leading economic debates & policy simulations</li>
-      <li>📝 Publishing economic insights and research</li>
-      <li>👨‍🏫 Teaching others through our Junior Fellowship Program</li>
-      <li>🏛 Representing the league at international competitions</li>
-    </ul>
+  <!-- Form Section -->
+  <section id="form" class="py-20">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold text-gold mb-6">Apply Now</h2>
+      <p class="mb-8 text-gray-700 text-lg">Fill out the form below to be considered for leadership or membership roles in NGEL.</p>
+      <div class="w-full max-w-4xl mx-auto">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform?embedded=true" 
+          width="100%" 
+          height="1200" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0" 
+          class="rounded-xl shadow-xl border border-gold"
+          >Loading…</iframe>
+      </div>
+    </div>
   </section>
 
-  <div class="cta">
-    <h2>Become a Founding Member of NextGenEcon</h2>
-    <p>Are you ready to be the change economics needs? Apply today and begin your journey with the world's most driven young economists.</p>
-    <a href="#">Apply Now</a>
-  </div>
-
-  <footer>
-    &copy; 2025 NextGenEcon Youth League. All rights reserved.
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-6">
+    <p class="text-gold text-sm">&copy; 2025 Next Gen Economics League. All rights reserved.</p>
   </footer>
-</body>
 
+</body>
 </html>
