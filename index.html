@@ -106,8 +106,7 @@
 <!-- Tab Function Script -->
 <script>
   function showTab(tabName) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-    document.getElementById(tabName).classList.remove('hidden');
+    window.location.href = tabName + ".html";
   }
 </script>
 
