@@ -1,17 +1,27 @@
-<!-- Updated NGEL Website with New Sections -->
+Nextgenecon
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Next Gen Economics League (NGEL)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Playfair Display', serif; }
-    .text-gold { color: #D4AF37; }
-    .bg-gold { background-color: #D4AF37; }
-    .border-gold { border-color: #D4AF37; }
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+    .text-gold {
+      color: #D4AF37;
+    }
+    .bg-gold {
+      background-color: #D4AF37;
+    }
+    .border-gold {
+      border-color: #D4AF37;
+    }
   </style>
 </head>
 <body class="bg-white text-black">
@@ -20,7 +30,7 @@
   <section class="bg-black text-white py-20">
     <div class="max-w-5xl mx-auto text-center px-4">
       <h1 class="text-5xl font-bold text-gold mb-4"> NextGenEcon </h1>
-      <p class="text-lg">Driving social impact through economics, technology, and youth leadership.</p>
+      <p class="text-lg">Empowering youth leaders to shape the future of economics, finance, and global change.</p>
       <a href="#form" class="mt-8 inline-block bg-gold text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-500 transition">Join Now</a>
     </div>
   </section>
@@ -30,93 +40,38 @@
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h2 class="text-4xl text-gold font-bold mb-4">About NGEL</h2>
       <p class="text-lg text-gray-700">
-        The Next Gen Economics League (NGEL) is a youth-led national initiative integrating technology,
-        research, and outreach to create measurable impact in financial literacy, economic empowerment,
-        and scalable social innovation.
+        The Next Gen Economics League (NGEL) is a dynamic youth-led platform for aspiring economists, thinkers, and problem solvers.
+        Learn real-world economics, lead social-impact projects, and prepare for Ivy League-level excellence — all while being guided by like-minded peers and ambitious leaders.
       </p>
     </div>
   </section>
 
-  <!-- Tabbed Divisions Section -->
-<section id="divisions" class="bg-gray-100 py-16">
-  <div class="max-w-6xl mx-auto px-4">
-
-    <!-- Tabs -->
-    <div class="flex justify-center space-x-6 mb-10">
-      <button onclick="showTab('tech')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Technology</button>
-      <button onclick="showTab('research')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Research</button>
-      <button onclick="showTab('projects')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Projects</button>
-      <button onclick="showTab('outreach')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Outreach</button>
+  <!-- Features -->
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
+        <h3 class="text-2xl font-semibold text-gold mb-2">Leadership</h3>
+        <p>Lead real economics projects, host events, and represent your region nationally.</p>
+      </div>
+      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
+        <h3 class="text-2xl font-semibold text-gold mb-2">Learning</h3>
+        <p>Participate in engaging quizzes and competitions to sharpen your skills and boost your profile</p>
+      </div>
+      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
+        <h3 class="text-2xl font-semibold text-gold mb-2">Network</h3>
+        <p>Meet other brilliant students from across the world and build your tribe.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Tab Content Wrapper -->
-    <div class="bg-white shadow-xl p-8 rounded-2xl border-l-4 border-gold">
-
-      <!-- Technology Tab -->
-      <div id="tech" class="tab-content">
-        <h3 class="text-3xl font-semibold text-gold mb-4">Technology Division</h3>
-        <p class="text-gray-700 text-lg mb-4">Our Technology Division builds all NGEL software, tools, and systems.</p>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>LedgerPlus – financial literacy mobile app</li>
-          <li>ERP System for Indian street vendors</li>
-          <li>Automation tools for outreach & reporting</li>
-          <li>Future ML-based economic modeling tools</li>
-        </ul>
-      </div>
-
-      <!-- Research Tab -->
-      <div id="research" class="tab-content hidden">
-        <h3 class="text-3xl font-semibold text-gold mb-4">Research Division</h3>
-        <p class="text-gray-700 text-lg mb-4">The Research Division analyzes economic issues and evaluates NGEL's impact.</p>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>Whitepapers on financial literacy effectiveness</li>
-          <li>Economic research & policy analysis</li>
-          <li>Impact reports on workshops & deployments</li>
-          <li>Collaboration with professors & NGOs</li>
-        </ul>
-      </div>
-
-      <!-- Projects Tab -->
-      <div id="projects" class="tab-content hidden">
-        <h3 class="text-3xl font-semibold text-gold mb-4">Flagship Projects</h3>
-        <p class="text-gray-700 text-lg mb-4">NGEL oversees high-impact economic empowerment projects.</p>
-        <ul class="list-disc list-inside text-gray-700">
-          <li><strong>LedgerPlus:</strong> app used in financial literacy workshops</li>
-          <li><strong>ERP Vendor System:</strong> supporting small vendors in India</li>
-          <li>Future student-led economic-tech initiatives</li>
-        </ul>
-      </div>
-
-      <!-- Outreach Tab -->
-      <div id="outreach" class="tab-content hidden">
-        <h3 class="text-3xl font-semibold text-gold mb-4">Outreach & Operations</h3>
-        <p class="text-gray-700 text-lg mb-4">Leading national workshops, partnerships, and on-ground impact.</p>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>Financial literacy workshops across UAE & India</li>
-          <li>Partnerships with NGOs, schools & labor camps</li>
-          <li>Managing volunteer teams & community engagement</li>
-          <li>PR, social media & impact documentation</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Tab Function Script -->
-<script>
-  function showTab(tabName) {
-    window.location.href = tabName + ".html";
-  }
-</script>
-
-  <!-- Apply Section -->
+  <!-- Form Section -->
   <section id="form" class="py-20">
     <div class="max-w-5xl mx-auto text-center px-4">
       <h2 class="text-4xl font-bold text-gold mb-6">Apply Now</h2>
       <p class="mb-8 text-gray-700 text-lg">Click the button below to fill out the application form.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform"
-         target="_blank" rel="noopener noreferrer"
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform" 
+         target="_blank" 
+         rel="noopener noreferrer"
          class="inline-block bg-gold text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition shadow-lg">
         Apply Now
       </a>
@@ -125,25 +80,8 @@
 
   <!-- Footer -->
   <footer class="bg-black text-white text-center py-6">
-    <p class="text-gold text-sm">© 2025 NextGenEcon. All rights reserved.</p>
+    <p class="text-gold text-sm">&copy; 2025 NextGenEcon. All rights reserved.</p>
   </footer>
-
-
-
-  <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-90 shadow z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-gold text-2xl font-bold">NGEL</h1>
-      <div class="space-x-6 text-white text-lg">
-        <a href="#about" class="hover:text-gold transition">About</a>
-        <a href="#divisions" class="hover:text-gold transition">Divisions</a>
-        <a href="#projects" class="hover:text-gold transition">Projects</a>
-        <a href="#impact" class="hover:text-gold transition">Impact</a>
-        <a href="#team" class="hover:text-gold transition">Team</a>
-        <a href="#form" class="hover:text-gold transition">Apply</a>
-      </div>
-    </div>
-  </nav>
 
 </body>
 </html>
