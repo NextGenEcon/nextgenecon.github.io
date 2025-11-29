@@ -37,36 +37,79 @@
     </div>
   </section>
 
-  <!-- Four Core Divisions -->
-  <section class="bg-gray-100 py-16">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-center">
+  <!-- Tabbed Divisions Section -->
+<section id="divisions" class="bg-gray-100 py-16">
+  <div class="max-w-6xl mx-auto px-4">
 
-      <!-- Tech Division -->
-      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
-        <h3 class="text-2xl font-semibold text-gold mb-2">Technology</h3>
-        <p>Builds financial tools, apps, and systems including LedgerPlus, ERP for vendors, and ML-powered economic solutions.</p>
+    <!-- Tabs -->
+    <div class="flex justify-center space-x-6 mb-10">
+      <button onclick="showTab('tech')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Technology</button>
+      <button onclick="showTab('research')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Research</button>
+      <button onclick="showTab('projects')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Projects</button>
+      <button onclick="showTab('outreach')" class="tab-btn bg-white border border-gold text-gold py-2 px-4 rounded-lg shadow hover:bg-gold hover:text-black transition">Outreach</button>
+    </div>
+
+    <!-- Tab Content Wrapper -->
+    <div class="bg-white shadow-xl p-8 rounded-2xl border-l-4 border-gold">
+
+      <!-- Technology Tab -->
+      <div id="tech" class="tab-content">
+        <h3 class="text-3xl font-semibold text-gold mb-4">Technology Division</h3>
+        <p class="text-gray-700 text-lg mb-4">Our Technology Division builds all NGEL software, tools, and systems.</p>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>LedgerPlus – financial literacy mobile app</li>
+          <li>ERP System for Indian street vendors</li>
+          <li>Automation tools for outreach & reporting</li>
+          <li>Future ML-based economic modeling tools</li>
+        </ul>
       </div>
 
-      <!-- Research Division -->
-      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
-        <h3 class="text-2xl font-semibold text-gold mb-2">Research</h3>
-        <p>Produces research reports, whitepapers, policy analysis, and evaluates impact across NGEL initiatives.</p>
+      <!-- Research Tab -->
+      <div id="research" class="tab-content hidden">
+        <h3 class="text-3xl font-semibold text-gold mb-4">Research Division</h3>
+        <p class="text-gray-700 text-lg mb-4">The Research Division analyzes economic issues and evaluates NGEL's impact.</p>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>Whitepapers on financial literacy effectiveness</li>
+          <li>Economic research & policy analysis</li>
+          <li>Impact reports on workshops & deployments</li>
+          <li>Collaboration with professors & NGOs</li>
+        </ul>
       </div>
 
-      <!-- Projects Division -->
-      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
-        <h3 class="text-2xl font-semibold text-gold mb-2">Projects</h3>
-        <p>Oversees all NGEL impact ventures including LedgerPlus deployments, ERP rollouts, and new economic innovation projects.</p>
+      <!-- Projects Tab -->
+      <div id="projects" class="tab-content hidden">
+        <h3 class="text-3xl font-semibold text-gold mb-4">Flagship Projects</h3>
+        <p class="text-gray-700 text-lg mb-4">NGEL oversees high-impact economic empowerment projects.</p>
+        <ul class="list-disc list-inside text-gray-700">
+          <li><strong>LedgerPlus:</strong> app used in financial literacy workshops</li>
+          <li><strong>ERP Vendor System:</strong> supporting small vendors in India</li>
+          <li>Future student-led economic-tech initiatives</li>
+        </ul>
       </div>
 
-      <!-- Outreach Division -->
-      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
-        <h3 class="text-2xl font-semibold text-gold mb-2">Outreach</h3>
-        <p>Runs workshops, collaborates with NGOs, grows community initiatives, and manages PR, partnerships, and volunteer operations.</p>
+      <!-- Outreach Tab -->
+      <div id="outreach" class="tab-content hidden">
+        <h3 class="text-3xl font-semibold text-gold mb-4">Outreach & Operations</h3>
+        <p class="text-gray-700 text-lg mb-4">Leading national workshops, partnerships, and on-ground impact.</p>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>Financial literacy workshops across UAE & India</li>
+          <li>Partnerships with NGOs, schools & labor camps</li>
+          <li>Managing volunteer teams & community engagement</li>
+          <li>PR, social media & impact documentation</li>
+        </ul>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Tab Function Script -->
+<script>
+  function showTab(tabName) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+    document.getElementById(tabName).classList.remove('hidden');
+  }
+</script>
 
   <!-- Apply Section -->
   <section id="form" class="py-20">
