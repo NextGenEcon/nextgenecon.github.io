@@ -254,13 +254,13 @@
 
             <!-- Tab Navigation -->
             <div class="flex flex-wrap justify-center gap-4 mb-12 reveal">
-                <button onclick="switchTab('research', this)" class="hover-trigger tab-btn active px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold bg-brand-gold text-black font-bold transition-all">Research</button>
-                <button onclick="switchTab('policy', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all">Policy</button>
-                <button onclick="switchTab('events', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all">Summits</button>
+                <button onclick="switchTab('research', this)" class="hover-trigger tab-btn active px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold bg-brand-gold text-black font-bold transition-all cursor-pointer">Research</button>
+                <button onclick="switchTab('policy', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all cursor-pointer">Policy</button>
+                <button onclick="switchTab('events', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all cursor-pointer">Summits</button>
             </div>
 
             <!-- Tab Contents -->
-            <div id="research" class="tab-content active grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="research" class="tab-content active md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Research Item 1 -->
                 <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
                     <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Paper</div>
@@ -284,7 +284,7 @@
                 </div>
             </div>
 
-            <div id="policy" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="policy" class="tab-content md:grid-cols-2 lg:grid-cols-3 gap-8">
                  <!-- Policy Item 1 -->
                  <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
                     <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Framework</div>
@@ -301,7 +301,7 @@
                 </div>
             </div>
 
-            <div id="events" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="events" class="tab-content md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Event Item 1 -->
                 <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
                     <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Summit</div>
