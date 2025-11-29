@@ -1,86 +1,555 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Next Gen Economics League (NGEL)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Playfair Display', serif;
-    }
-    .text-gold {
-      color: #D4AF37;
-    }
-    .bg-gold {
-      background-color: #D4AF37;
-    }
-    .border-gold {
-      border-color: #D4AF37;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGenEcon | The Future of Economics</title>
+    <meta name="description" content="Empowering youth leaders to shape the future of economics, finance, and global change.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#111111',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            goldDark: '#AA8C2C',
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-gold': 'linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA8C2C 100%)',
+                        'gradient-dark': 'linear-gradient(to bottom, #0a0a0a, #111111)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            cursor: none; /* Hide default cursor */
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #D4AF37;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:hover .cursor-outline {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Hover state for links/buttons */
+        body.hovering .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #D4AF37;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FFF8E1 0%, #D4AF37 40%, #AA8C2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .btn-glow {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            transform: scale(0);
+            transition: transform 0.6s ease-out;
+        }
+        
+        .btn-glow:hover::after {
+            transform: scale(1);
+        }
+
+        /* Tab Animations */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .tab-content.active {
+            display: grid;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body class="bg-white text-black">
+<body class="antialiased selection:bg-brand-gold selection:text-brand-black">
 
-  <!-- Hero Section -->
-  <section class="bg-black text-white py-20">
-    <div class="max-w-5xl mx-auto text-center px-4">
-      <h1 class="text-5xl font-bold text-gold mb-4"> NextGenEcon </h1>
-      <p class="text-lg">Empowering youth leaders to shape the future of economics, finance, and global change.</p>
-      <a href="#form" class="mt-8 inline-block bg-gold text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-500 transition">Join Now</a>
-    </div>
-  </section>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
 
-  <!-- About Section -->
-  <section class="py-16">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-4xl text-gold font-bold mb-4">About NGEL</h2>
-      <p class="text-lg text-gray-700">
-        The Next Gen Economics League (NGEL) is a dynamic youth-led platform for aspiring economists, thinkers, and problem solvers.
-        Learn real-world economics, lead social-impact projects, and prepare for Ivy League-level excellence — all while being guided by like-minded peers and ambitious leaders.
-      </p>
-    </div>
-  </section>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider cursor-pointer hover-trigger">NGEL</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover-trigger text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors uppercase tracking-widest">About</a>
+                        <a href="#projects" class="hover-trigger text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors uppercase tracking-widest">Projects</a>
+                        <a href="#impact" class="hover-trigger text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors uppercase tracking-widest">Impact</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform" target="_blank" class="hover-trigger px-6 py-2 rounded-sm border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all duration-300 text-sm font-medium uppercase tracking-widest">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Features -->
-  <section class="bg-gray-100 py-16">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
-      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
-        <h3 class="text-2xl font-semibold text-gold mb-2">Leadership</h3>
-        <p>Lead real economics projects, host events, and represent your region nationally.</p>
-      </div>
-      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
-        <h3 class="text-2xl font-semibold text-gold mb-2">Learning</h3>
-        <p>Participate in engaging quizzes and competitions to sharpen your skills and boost your profile</p>
-      </div>
-      <div class="p-6 border-l-4 border-gold shadow bg-white rounded-xl">
-        <h3 class="text-2xl font-semibold text-gold mb-2">Network</h3>
-        <p>Meet other brilliant students from across the world and build your tribe.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <canvas id="hero-canvas"></canvas>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <p class="reveal text-brand-gold font-medium tracking-[0.3em] uppercase mb-6">The Next Generation Economics League</p>
+            <h1 class="reveal font-serif text-6xl md:text-8xl font-bold mb-8 leading-tight">
+                Shape the <br />
+                <span class="text-gradient-gold">Global Future</span>
+            </h1>
+            <p class="reveal text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                A prestigious platform for the brightest youth minds. Master economics, lead social impact, and prepare for Ivy League excellence.
+            </p>
+            <div class="reveal flex flex-col md:flex-row justify-center gap-6">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform" 
+                   target="_blank"
+                   class="hover-trigger btn-glow bg-brand-gold text-black px-10 py-4 font-semibold uppercase tracking-widest hover:bg-white transition-colors duration-300">
+                    Join the League
+                </a>
+                <a href="#projects" class="hover-trigger px-10 py-4 border border-gray-700 text-white font-semibold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-colors duration-300">
+                    View Projects
+                </a>
+            </div>
+        </div>
 
-  <!-- Form Section -->
-  <section id="form" class="py-20">
-    <div class="max-w-5xl mx-auto text-center px-4">
-      <h2 class="text-4xl font-bold text-gold mb-6">Apply Now</h2>
-      <p class="mb-8 text-gray-700 text-lg">Click the button below to fill out the application form.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform" 
-         target="_blank" 
-         rel="noopener noreferrer"
-         class="inline-block bg-gold text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition shadow-lg">
-        Apply Now
-      </a>
-    </div>
-  </section>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </header>
 
-  <!-- Footer -->
-  <footer class="bg-black text-white text-center py-6">
-    <p class="text-gold text-sm">&copy; 2025 NextGenEcon. All rights reserved.</p>
-  </footer>
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-brand-black relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-white">More Than Just <br><span class="text-brand-gold italic">Economics</span></h2>
+                    <div class="h-1 w-20 bg-brand-gold mb-8"></div>
+                </div>
+                <div class="reveal space-y-6 text-gray-300 font-light leading-relaxed text-lg">
+                    <p>
+                        The Next Gen Economics League (NGEL) is a dynamic ecosystem designed for the architects of tomorrow. We are not just an organization; we are a movement of aspiring economists, thinkers, and problem solvers.
+                    </p>
+                    <p>
+                        Here, ambition meets opportunity. Whether you aim to lead real-world social impact projects or refine your portfolio for top-tier university admissions, NGEL provides the network and the platform to elevate your potential.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Project Showcase Section (Interactive Tabs) -->
+    <section id="projects" class="py-32 bg-brand-dark border-t border-gray-900 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold font-medium tracking-[0.2em] uppercase">Excellence in Action</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-3 text-white">Featured Projects</h2>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 reveal">
+                <button onclick="switchTab('research', this)" class="hover-trigger tab-btn active px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold bg-brand-gold text-black font-bold transition-all">Research</button>
+                <button onclick="switchTab('policy', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all">Policy</button>
+                <button onclick="switchTab('events', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all">Summits</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="research" class="tab-content active grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Research Item 1 -->
+                <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Paper</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">Global Inflation Dynamics 2024</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">A comprehensive analysis of post-pandemic inflation trends across G20 nations, published in the Junior Economic Review.</p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">Read Abstract <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+                <!-- Research Item 2 -->
+                <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Case Study</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">The Crypto Paradox</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Investigating the volatility of decentralized currencies and their potential integration into traditional banking systems.</p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">Read Abstract <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+                 <!-- Research Item 3 -->
+                 <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Analysis</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">AI in Labor Markets</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Forecasting the displacement and creation of jobs in the financial sector due to Large Language Models.</p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">Read Abstract <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+            </div>
+
+            <div id="policy" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <!-- Policy Item 1 -->
+                 <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Framework</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">Sustainable Urban Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">A youth-drafted policy proposal for integrating green zones in metropolitan business districts.</p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">View Proposal <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+                <!-- Policy Item 2 -->
+                 <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Whitepaper</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">Education Finance Reform</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Proposing micro-loan structures for student entrepreneurs in developing economies.</p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">View Proposal <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+            </div>
+
+            <div id="events" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Event Item 1 -->
+                <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Summit</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">NYC Youth Econ Forum</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Hosted 200+ delegates discussing the future of fintech with industry leaders from Wall Street.</p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">Event Recap <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Impact Section -->
+    <section id="impact" class="py-32 bg-brand-black relative">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10 grayscale mix-blend-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 reveal">
+                    <div class="glass-panel p-10 border-l-4 border-l-brand-gold">
+                        <h3 class="text-xl font-bold text-white mb-2">Project: <span class="text-brand-gold">FinLit For All</span></h3>
+                        <p class="text-gray-400 text-sm mb-6">Bridging the economic gap by teaching financial literacy to underprivileged high school students across 15 states.</p>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2">Project: <span class="text-brand-gold">Green Economy Initiative</span></h3>
+                        <p class="text-gray-400 text-sm">Organizing community clean-up drives funded by local micro-economics models designed by our members.</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 reveal">
+                    <span class="text-brand-gold font-medium tracking-[0.2em] uppercase">Social Service</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mt-3 text-white mb-6">Economics for <br> the Common Good</h2>
+                    <p class="text-gray-300 font-light leading-relaxed text-lg mb-8">
+                        We believe economics is a tool for empathy. NGEL members don't just study markets; they serve communities. Through our social impact wing, we apply economic principles to solve real-world poverty and sustainability issues.
+                    </p>
+                    <a href="#apply" class="hover-trigger text-brand-gold border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-all uppercase tracking-widest text-sm font-bold">Start a Chapter in Your City</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="apply" class="py-32 relative overflow-hidden">
+        <!-- Abstract Background -->
+        <div class="absolute inset-0 bg-brand-gold opacity-5"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-gold rounded-full filter blur-[100px] opacity-10"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-brand-gold rounded-full filter blur-[100px] opacity-10"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="reveal font-serif text-5xl md:text-7xl font-bold text-white mb-8">Ready to Lead?</h2>
+            <p class="reveal text-xl text-gray-300 mb-12 font-light">
+                The future belongs to those who prepare for it today. Secure your place in the league.
+            </p>
+            <div class="reveal">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="hover-trigger inline-block bg-gradient-to-r from-brand-gold to-yellow-600 text-black font-bold text-lg py-5 px-12 rounded-sm hover:scale-105 transform transition duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] uppercase tracking-widest">
+                    Apply Now
+                </a>
+                <p class="mt-6 text-sm text-gray-500 uppercase tracking-widest">Limited Spots Available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-serif text-2xl font-bold text-white">NGEL</span>
+            </div>
+            <div class="text-gray-500 text-sm">
+                &copy; 2025 NextGenEcon. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Tab Functionality
+        function switchTab(tabId, btn) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Show selected content
+            document.getElementById(tabId).classList.add('active');
+
+            // Reset all buttons
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.classList.remove('bg-brand-gold', 'text-black', 'font-bold');
+                button.classList.add('text-brand-gold', 'hover:bg-brand-gold', 'hover:text-black');
+            });
+            // Activate selected button
+            btn.classList.remove('text-brand-gold', 'hover:bg-brand-gold', 'hover:text-black');
+            btn.classList.add('bg-brand-gold', 'text-black', 'font-bold');
+        }
+
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        const hoverTriggers = document.querySelectorAll('.hover-trigger');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Outline follows with slight delay (handled by CSS transition if not utilizing JS animation frame for smoothness)
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        hoverTriggers.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering');
+            });
+            link.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering');
+            });
+        });
+
+        // 3D Tilt Effect for Glass Panels
+        const cards = document.querySelectorAll('.tilt-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -5; // Max rotation deg
+                const rotateY = ((x - centerX) / centerX) * 5;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                card.style.transition = 'transform 0.5s ease';
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
+        });
+
+        // Navbar transparency on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/90', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+            } else {
+                navbar.classList.remove('bg-black/90', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+            }
+        });
+
+        // Reveal animations on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+
+        // Canvas Background (Particles)
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if(this.x < 0 || this.x > width) this.vx *= -1;
+                if(this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.3)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for(let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.05)';
+            ctx.lineWidth = 1;
+            
+            for(let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                for(let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if(distance < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+        
+        resize();
+        initParticles();
+        animate();
+
+    </script>
 </body>
 </html>
