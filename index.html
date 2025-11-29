@@ -119,14 +119,16 @@
             transform: translateY(0);
         }
 
-        #hero-canvas {
-            position: absolute;
+        /* Fixed Background Canvas */
+        #bg-canvas {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
-            opacity: 0.4;
+            z-index: -1;
+            opacity: 0.6;
+            pointer-events: none;
         }
 
         .btn-glow {
@@ -167,6 +169,9 @@
 </head>
 <body class="antialiased selection:bg-brand-gold selection:text-brand-black">
 
+    <!-- Interactive Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- Custom Cursor Elements -->
     <div class="cursor-dot hidden md:block"></div>
     <div class="cursor-outline hidden md:block"></div>
@@ -192,8 +197,6 @@
 
     <!-- Hero Section -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <canvas id="hero-canvas"></canvas>
-        
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
             <p class="reveal text-brand-gold font-medium tracking-[0.3em] uppercase mb-6">The Next Generation Economics League</p>
             <h1 class="reveal font-serif text-6xl md:text-8xl font-bold mb-8 leading-tight">
@@ -222,8 +225,8 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-32 bg-brand-black relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="about" class="py-32 relative bg-brand-black/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="reveal">
                     <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-white">More Than Just <br><span class="text-brand-gold italic">Economics</span></h2>
@@ -242,8 +245,8 @@
     </section>
 
     <!-- Project Showcase Section (Interactive Tabs) -->
-    <section id="projects" class="py-32 bg-brand-dark border-t border-gray-900 relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="projects" class="py-32 border-t border-gray-900 relative bg-brand-dark/80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16 reveal">
                 <span class="text-brand-gold font-medium tracking-[0.2em] uppercase">Excellence in Action</span>
                 <h2 class="font-serif text-4xl md:text-5xl font-bold mt-3 text-white">Featured Projects</h2>
@@ -311,7 +314,7 @@
     </section>
 
     <!-- Social Impact Section -->
-    <section id="impact" class="py-32 bg-brand-black relative">
+    <section id="impact" class="py-32 relative bg-brand-black/90 backdrop-blur-sm">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10 grayscale mix-blend-overlay"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -337,7 +340,7 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section id="apply" class="py-32 relative overflow-hidden">
+    <section id="apply" class="py-32 relative overflow-hidden bg-brand-black/80">
         <!-- Abstract Background -->
         <div class="absolute inset-0 bg-brand-gold opacity-5"></div>
         <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-gold rounded-full filter blur-[100px] opacity-10"></div>
@@ -361,7 +364,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-gray-900">
+    <footer class="bg-black py-12 border-t border-gray-900 relative z-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-4 md:mb-0">
                 <span class="font-serif text-2xl font-bold text-white">NGEL</span>
@@ -376,19 +379,15 @@
     <script>
         // Tab Functionality
         function switchTab(tabId, btn) {
-            // Hide all contents
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
-            // Show selected content
             document.getElementById(tabId).classList.add('active');
 
-            // Reset all buttons
             document.querySelectorAll('.tab-btn').forEach(button => {
                 button.classList.remove('bg-brand-gold', 'text-black', 'font-bold');
                 button.classList.add('text-brand-gold', 'hover:bg-brand-gold', 'hover:text-black');
             });
-            // Activate selected button
             btn.classList.remove('text-brand-gold', 'hover:bg-brand-gold', 'hover:text-black');
             btn.classList.add('bg-brand-gold', 'text-black', 'font-bold');
         }
@@ -402,11 +401,9 @@
             const posX = e.clientX;
             const posY = e.clientY;
 
-            // Dot follows instantly
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
 
-            // Outline follows with slight delay (handled by CSS transition if not utilizing JS animation frame for smoothness)
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
@@ -422,35 +419,29 @@
             });
         });
 
-        // 3D Tilt Effect for Glass Panels
+        // 3D Tilt Effect
         const cards = document.querySelectorAll('.tilt-card');
-        
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                
-                const rotateX = ((y - centerY) / centerY) * -5; // Max rotation deg
+                const rotateX = ((y - centerY) / centerY) * -5;
                 const rotateY = ((x - centerX) / centerX) * 5;
-
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
             });
-
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
                 card.style.transition = 'transform 0.5s ease';
             });
-
             card.addEventListener('mouseenter', () => {
                 card.style.transition = 'none';
             });
         });
 
-        // Navbar transparency on scroll
+        // Navbar scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -460,7 +451,7 @@
             }
         });
 
-        // Reveal animations on scroll
+        // Reveal Animations
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -473,81 +464,85 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
+        reveal();
 
-        // Canvas Background (Particles)
-        const canvas = document.getElementById('hero-canvas');
+        // --- Integrated Particle Background Script ---
+        const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        
+        let particlesArray;
+
         class Particle {
             constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2;
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if(this.x < 0 || this.x > width) this.vx *= -1;
-                if(this.y < 0 || this.y > height) this.vy *= -1;
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.directionX = (Math.random() * 2) - 1; 
+                this.directionY = (Math.random() * 2) - 1;
+                this.size = (Math.random() * 2) + 1; 
             }
             draw() {
-                ctx.fillStyle = 'rgba(212, 175, 55, 0.3)';
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.6)'; // Brand Gold Color
                 ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                
+                this.x += this.directionX * 0.4; // Slightly faster than reference for visibility
+                this.y += this.directionY * 0.4;
+                this.draw();
             }
         }
 
-        function initParticles() {
-            particles = [];
-            for(let i = 0; i < 50; i++) {
-                particles.push(new Particle());
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 15000; // Density from reference
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
             }
         }
 
         function animate() {
-            ctx.clearRect(0, 0, width, height);
-            
-            ctx.strokeStyle = 'rgba(212, 175, 55, 0.05)';
-            ctx.lineWidth = 1;
-            
-            for(let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-                
-                for(let j = i; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
+                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                     
-                    if(distance < 150) {
+                    // Dynamic connection distance based on canvas size
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
+                        opacityValue = 1 - (distance/20000);
+                        ctx.strokeStyle = 'rgba(212, 175, 55,' + opacityValue + ')'; // Brand Gold Color
+                        ctx.lineWidth = 1;
                         ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
                         ctx.stroke();
                     }
                 }
             }
-            requestAnimationFrame(animate);
         }
 
-        window.addEventListener('resize', () => {
-            resize();
-            initParticles();
+        window.addEventListener('resize', function(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
         });
-        
-        resize();
-        initParticles();
+
+        init();
         animate();
 
     </script>
