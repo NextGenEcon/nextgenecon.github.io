@@ -204,7 +204,7 @@
                 <span class="text-gradient-gold">Global Future</span>
             </h1>
             <p class="reveal text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                A prestigious platform for the brightest youth minds. Master economics, lead social impact, and prepare for Ivy League excellence.
+                A prestigious platform for the brightest youth minds. Master economics, lead social impact, and prepare for excellence.
             </p>
             <div class="reveal flex flex-col md:flex-row justify-center gap-6">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScItEgDsMA4FR3bgo2mSGjPCHHEjeA-G_gN5g7J4oZ6vLCsgA/viewform" 
@@ -254,13 +254,47 @@
 
             <!-- Tab Navigation -->
             <div class="flex flex-wrap justify-center gap-4 mb-12 reveal">
-                <button onclick="switchTab('research', this)" class="hover-trigger tab-btn active px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold bg-brand-gold text-black font-bold transition-all cursor-pointer">Research</button>
+                <button onclick="switchTab('innovation', this)" class="hover-trigger tab-btn active px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold bg-brand-gold text-black font-bold transition-all cursor-pointer">Innovation</button>
+                <button onclick="switchTab('research', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all cursor-pointer">Research</button>
                 <button onclick="switchTab('policy', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all cursor-pointer">Policy</button>
                 <button onclick="switchTab('events', this)" class="hover-trigger tab-btn px-8 py-3 text-sm uppercase tracking-widest border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all cursor-pointer">Summits</button>
             </div>
 
             <!-- Tab Contents -->
-            <div id="research" class="tab-content active md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 1. Innovation / Tech Tab -->
+            <div id="innovation" class="tab-content active md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- StockViewers -->
+                <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Platform</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">StockViewers</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Intelligent market research for the next generation. Features predictive analytics, sentiment engines, and multi-strategy backtesting to empower student investors.
+                    </p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">Explore Platform <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+                <!-- LedgerPlus -->
+                <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Mobile App</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">LedgerPlus</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        A lightweight finance app for underserved communities. Includes automated savings, spending analytics, and accessible educational modules.
+                    </p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">View Project <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+                <!-- Microbusiness ERP -->
+                <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
+                    <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">In Development</div>
+                    <h3 class="text-2xl font-serif text-white mb-4 group-hover:text-brand-gold transition">Microbusiness ERP</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Offline-first technology for India’s street vendors. Tracks inventory, generates GST-ready invoices, and provides analytics on ultra-low storage devices.
+                    </p>
+                    <span class="text-brand-gold text-sm font-medium flex items-center">Learn More <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+                </div>
+            </div>
+
+            <!-- 2. Research Tab -->
+            <div id="research" class="tab-content md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Research Item 1 -->
                 <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
                     <div class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-4">Paper</div>
@@ -284,6 +318,7 @@
                 </div>
             </div>
 
+            <!-- 3. Policy Tab -->
             <div id="policy" class="tab-content md:grid-cols-2 lg:grid-cols-3 gap-8">
                  <!-- Policy Item 1 -->
                  <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
@@ -301,6 +336,7 @@
                 </div>
             </div>
 
+            <!-- 4. Events Tab -->
             <div id="events" class="tab-content md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Event Item 1 -->
                 <div class="glass-panel p-8 tilt-card hover-trigger group cursor-pointer">
@@ -320,11 +356,15 @@
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="order-2 md:order-1 reveal">
                     <div class="glass-panel p-10 border-l-4 border-l-brand-gold">
-                        <h3 class="text-xl font-bold text-white mb-2">Project: <span class="text-brand-gold">FinLit For All</span></h3>
-                        <p class="text-gray-400 text-sm mb-6">Bridging the economic gap by teaching financial literacy to underprivileged high school students across 15 states.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">Project: <span class="text-brand-gold">Financial Literacy Workshops</span></h3>
+                        <p class="text-gray-400 text-sm mb-6">
+                            Conducting programs across UAE schools and labor camps. Teaching budgeting, debt management, and digital payments while onboarding 1500+ learners onto LedgerPlus.
+                        </p>
                         
-                        <h3 class="text-xl font-bold text-white mb-2">Project: <span class="text-brand-gold">Green Economy Initiative</span></h3>
-                        <p class="text-gray-400 text-sm">Organizing community clean-up drives funded by local micro-economics models designed by our members.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">Project: <span class="text-brand-gold">Microbusiness Pilot (India)</span></h3>
+                        <p class="text-gray-400 text-sm">
+                            Digitizing operations for 100+ street vendors using our custom ERP. Focused on improving business transparency, reducing errors, and enabling financial inclusion.
+                        </p>
                     </div>
                 </div>
                 <div class="order-1 md:order-2 reveal">
